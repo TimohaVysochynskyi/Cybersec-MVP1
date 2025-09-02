@@ -1,0 +1,18 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    223.32deg,
+    #d4c6fb 6.72%,
+    #c4b8f9 34.21%,
+    #3440e7 100.7%
+  );
+  padding-top: 60px;
+}
+
+.content {
+  width: 100%;
+  height: calc(100% - 40px - 80px);
+  margin-top: 40px;
+  display: flex;
+}

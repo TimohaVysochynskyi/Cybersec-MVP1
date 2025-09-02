@@ -1,0 +1,71 @@
+.container {
+  width: 25%;
+  height: 100%;
+  background-color: #cfd8f6;
+}
+.head {
+  width: 100%;
+  height: 50px;
+  padding: 12px 40px;
+  padding-left: 126px;
+  display: flex;
+  align-items: center;
+}
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+  line-height: 100%;
+}
+.list {
+  background-color: #45138f;
+  padding: 2px 0;
+  gap: 1px 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: calc(100% - 50px);
+  outline: none;
+  /* Кастомний скролбар */
+  scrollbar-width: thin;
+  scrollbar-color: #d4c6fb #3e79ee;
+}
+
+/* Webkit скролбар (Chrome, Safari, Edge) */
+.list::-webkit-scrollbar {
+  width: 20px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: #3e79ee;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: #d4c6fb;
+  border-radius: 10px;
+  border: 6px solid #3e79ee;
+}
+
+.list::-webkit-scrollbar-thumb:hover {
+  background: #c8b8f8;
+}
+
+.list::-webkit-scrollbar-corner {
+  background: #3e79ee;
+}
+.item {
+  width: 100%;
+  min-height: 105px;
+  height: 105px;
+  max-height: 100px;
+  position: relative;
+}
+.item::before {
+  content: "";
+  background-color: #3440e7;
+  width: 10px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
