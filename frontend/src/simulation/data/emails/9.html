@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Facebook</title>
+    <style>
+        .email-body {
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica, Arial, sans-serif;
+            background: #f0f2f5;
+            line-height: 1.34;
+            color: #1c1e21;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+        }
+
+        .header-section {
+            background: #1877f2;
+            padding: 20px 32px;
+            text-align: center;
+        }
+
+        .logo {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: -0.5px;
+            margin: 0;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: #ffffff;
+            border-radius: 8px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 12px;
+            position: relative;
+        }
+
+        .content-section {
+            padding: 32px;
+            font-size: 16px;
+            color: #1c1e21;
+            line-height: 1.34;
+        }
+
+        .greeting {
+            margin-bottom: 24px;
+            font-size: 16px;
+            color: #1c1e21;
+        }
+
+        .main-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1c1e21;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .activity-card {
+            background: #f0f2f5;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 24px 0;
+            border: 1px solid #dddfe2;
+        }
+
+        .activity-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            background: #1877f2;
+            border-radius: 50%;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .activity-info h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+            color: #1c1e21;
+        }
+
+        .activity-info p {
+            margin: 4px 0 0 0;
+            font-size: 14px;
+            color: #65676b;
+        }
+
+        .activity-details {
+            background: #ffffff;
+            border-radius: 6px;
+            padding: 16px;
+            margin-top: 12px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #e4e6ea;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #65676b;
+            font-size: 14px;
+        }
+
+        .detail-value {
+            color: #1c1e21;
+            font-size: 14px;
+            text-align: right;
+        }
+
+        .location-info {
+            background: #e7f3ff;
+            border: 1px solid #1877f2;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+
+        .location-title {
+            font-weight: bold;
+            color: #1877f2;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .location-text {
+            color: #1c1e21;
+            font-size: 14px;
+        }
+
+        .security-notice {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 20px 0;
+        }
+
+        .notice-title {
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 8px;
+        }
+
+        .notice-text {
+            color: #856404;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .actions-section {
+            background: #f0f2f5;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+            text-align: center;
+        }
+
+        .facebook-button {
+            background: #1877f2;
+            color: #ffffff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 14px;
+            display: inline-block;
+            margin: 8px 8px;
+        }
+
+        .facebook-button:hover {
+            background: #166fe5;
+        }
+
+        .secondary-button {
+            background: #e4e6ea;
+            color: #1c1e21;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 14px;
+            display: inline-block;
+            margin: 8px 8px;
+        }
+
+        .secondary-button:hover {
+            background: #d8dadf;
+        }
+
+        .suggestions-section {
+            margin: 24px 0;
+        }
+
+        .suggestions-title {
+            font-weight: bold;
+            color: #1c1e21;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .suggestion-item {
+            background: #f0f2f5;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .suggestion-icon {
+            width: 32px;
+            height: 32px;
+            background: #1877f2;
+            border-radius: 50%;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        .suggestion-text {
+            flex: 1;
+        }
+
+        .suggestion-text h4 {
+            margin: 0 0 4px 0;
+            font-size: 14px;
+            font-weight: bold;
+            color: #1c1e21;
+        }
+
+        .suggestion-text p {
+            margin: 0;
+            font-size: 12px;
+            color: #65676b;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 24px 0;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .stats-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            margin: 8px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .privacy-section {
+            background: #e7f3ff;
+            border: 1px solid #1877f2;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 24px 0;
+        }
+
+        .privacy-title {
+            font-weight: bold;
+            color: #1877f2;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .privacy-text {
+            color: #1c1e21;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .footer-section {
+            background: #f0f2f5;
+            padding: 24px 32px;
+            font-size: 12px;
+            color: #65676b;
+            text-align: center;
+            line-height: 1.4;
+            border-top: 1px solid #dddfe2;
+        }
+
+        .footer-links {
+            margin: 16px 0;
+        }
+
+        .footer-links a {
+            color: #1877f2;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .disclaimer {
+            font-size: 11px;
+            color: #8a8d91;
+            margin-top: 16px;
+            line-height: 1.4;
+        }
+
+        .disclaimer a {
+            color: #1877f2;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body class="email-body">
+    <table align="center" cellpadding="0" cellspacing="0" width="100%" class="email-container">
+        <tr>
+            <td class="header-section">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" style="position: absolute; top: 8px; left: 8px;">
+                        <path fill="#1877f2"
+                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                    </svg>
+                </div>
+                <h1 class="logo">facebook</h1>
+            </td>
+        </tr>
+        <tr>
+            <td class="content-section">
+                <div class="greeting">Привіт!</div>
+
+                <div class="main-title">Активність у вашому акаунті</div>
+
+                <p>Ми помітили нову активність у вашому акаунті Facebook та хотіли повідомити вас про це.</p>
+
+                <div class="activity-card">
+                    <div class="activity-header">
+                        <div class="activity-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                            </svg>
+                        </div>
+                        <div class="activity-info">
+                            <h3>Успішний вхід в акаунт</h3>
+                            <p>17 серпня 2024 о 15:42 (київський час)</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Пристрій:</span>
+                            <span class="detail-value">Chrome на Windows</span>
+                        </div>
+
+                        <div class="detail-row">
+                            <span class="detail-label">IP-адреса:</span>
+                            <span class="detail-value">91.202.11.47</span>
+                        </div>
+
+                        <div class="detail-row">
+                            <span class="detail-label">Метод входу:</span>
+                            <span class="detail-value">Пароль</span>
+                        </div>
+
+                        <div class="location-info">
+                            <div class="location-title">📍 Локація:</div>
+                            <div class="location-text">Київ, Київська область, Україна</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="security-notice">
+                    <div class="notice-title">🔒 Нагадування про безпеку</div>
+                    <div class="notice-text">
+                        Якщо це були не ви, рекомендуємо негайно змінити пароль та увімкнути двофакторну автентифікацію
+                        для додаткового захисту.
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <div class="stats-title">Ваша активність за останній тиждень</div>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">24</span>
+                            <span class="stat-label">Входи</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">156</span>
+                            <span class="stat-label">Публікації переглянуто</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">Повідомлень надіслано</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">Вподобань</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="suggestions-section">
+                    <div class="suggestions-title">Рекомендації для безпеки:</div>
+
+                    <div class="suggestion-item">
+                        <div class="suggestion-icon">🔐</div>
+                        <div class="suggestion-text">
+                            <h4>Увімкніть двофакторну автентифікацію</h4>
+                            <p>Додатковий рівень захисту для вашого акаунта</p>
+                        </div>
+                    </div>
+
+                    <div class="suggestion-item">
+                        <div class="suggestion-icon">🔍</div>
+                        <div class="suggestion-text">
+                            <h4>Перевірте активні сесії</h4>
+                            <p>Подивіться, де ви увійшли в акаунт</p>
+                        </div>
+                    </div>
+
+                    <div class="suggestion-item">
+                        <div class="suggestion-icon">⚙️</div>
+                        <div class="suggestion-text">
+                            <h4>Оновіть налаштування приватності</h4>
+                            <p>Контролюйте, хто може бачити ваші публікації</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions-section">
+                    <p style="margin-bottom: 16px; color: #1c1e21; font-weight: bold;">Керування безпекою акаунта:</p>
+                    <a href="https://www.facebook.com/settings?tab=security" class="facebook-button">
+                        Налаштування безпеки
+                    </a>
+                    <a href="https://www.facebook.com/settings?tab=security&section=sessions" class="secondary-button">
+                        Активні сесії
+                    </a>
+                    <a href="https://www.facebook.com/settings?tab=privacy" class="secondary-button">
+                        Приватність
+                    </a>
+                </div>
+
+                <div class="privacy-section">
+                    <div class="privacy-title">🛡️ Як ми захищаємо ваші дані</div>
+                    <div class="privacy-text">
+                        Facebook використовує передові технології для захисту вашого акаунта. Ми постійно відстежуємо
+                        підозрілу активність та сповіщаємо вас про важливі зміни в безпеці.
+                    </div>
+                </div>
+
+                <p>Якщо у вас є питання щодо безпеки вашого акаунта, відвідайте наш Центр допомоги або зверніться до
+                    служби підтримки.</p>
+
+                <p>З повагою,<br>
+                    Команда Facebook</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="footer-section">
+                <div class="footer-links">
+                    <a href="https://www.facebook.com/help">Допомога</a>
+                    <a href="https://www.facebook.com/settings">Налаштування</a>
+                    <a href="https://www.facebook.com/policies">Політика</a>
+                    <a href="https://about.facebook.com">Про нас</a>
+                </div>
+
+                © 2024 Meta Platforms, Inc.<br>
+                1 Hacker Way, Menlo Park, CA 94301, USA
+
+                <div class="disclaimer">
+                    Ви отримали цей лист, оскільки у налаштуваннях увімкнено сповіщення про безпеку.<br>
+                    <a href="https://www.facebook.com/settings?tab=notifications">Керувати налаштуваннями сповіщень</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

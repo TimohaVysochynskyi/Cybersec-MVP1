@@ -1,7 +1,12 @@
 import EmailItem from "../EmailItem/EmailItem";
 import css from "./EmailsList.module.css";
+import type { EmailListProps } from "../../../../types/email";
 
-export default function EmailsList() {
+export default function EmailsList({
+  emails,
+  selectedEmailId,
+  onEmailSelect,
+}: EmailListProps) {
   return (
     <>
       <div className={css.container}>
@@ -9,27 +14,15 @@ export default function EmailsList() {
           <span className={css.title}>Вхідні</span>
         </div>
         <ul className={css.list}>
-          <li className={css.item}>
-            <EmailItem />
-          </li>
-          <li className={css.item}>
-            <EmailItem />
-          </li>
-          <li className={css.item}>
-            <EmailItem />
-          </li>
-          <li className={css.item}>
-            <EmailItem />
-          </li>
-          <li className={css.item}>
-            <EmailItem />
-          </li>
-          <li className={css.item}>
-            <EmailItem />
-          </li>
-          <li className={css.item}>
-            <EmailItem />
-          </li>
+          {emails.map((email) => (
+            <li key={email.id} className={css.item}>
+              <EmailItem
+                email={email}
+                isSelected={email.id === selectedEmailId}
+                onClick={onEmailSelect}
+              />
+            </li>
+          ))}
         </ul>
       </div>
     </>

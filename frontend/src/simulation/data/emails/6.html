@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Discord</title>
+    <style>
+        .email-body {
+            margin: 0;
+            padding: 0;
+            font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: #23272a;
+            line-height: 1.6;
+            color: #dcddde;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #2c2f33;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .header-section {
+            padding: 32px 32px 24px 32px;
+            text-align: center;
+            background: #2c2f33;
+            border-bottom: 1px solid #40444b;
+        }
+
+        .logo {
+            width: 120px;
+            height: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        .content-section {
+            padding: 32px;
+            font-size: 15px;
+            color: #dcddde;
+            line-height: 1.6;
+            background: #2c2f33;
+        }
+
+        .greeting {
+            margin-bottom: 24px;
+            font-size: 16px;
+            color: #dcddde;
+        }
+
+        .main-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .update-info {
+            background: #36393f;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 24px 0;
+            border-left: 4px solid #5865f2;
+            color: #dcddde;
+        }
+
+        .feature-section {
+            margin: 24px 0;
+        }
+
+        .feature-title {
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .feature-list {
+            background: #36393f;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .feature-item {
+            margin: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #dcddde;
+        }
+
+        .feature-item:before {
+            content: "•";
+            color: #5865f2;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .button-section {
+            text-align: center;
+            margin: 32px 0;
+            padding: 24px;
+            background: #36393f;
+            border-radius: 8px;
+        }
+
+        .discord-button {
+            background: #5865f2;
+            color: #ffffff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 15px;
+            display: inline-block;
+        }
+
+        .discord-button:hover {
+            background: #4752c4;
+        }
+
+        .secondary-links {
+            text-align: center;
+            margin: 16px 0;
+        }
+
+        .secondary-link {
+            color: #00aff4;
+            text-decoration: none;
+            font-size: 14px;
+            margin: 0 12px;
+        }
+
+        .secondary-link:hover {
+            text-decoration: underline;
+        }
+
+        .community-stats {
+            background: #36393f;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 24px 0;
+            text-align: center;
+        }
+
+        .stats-title {
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: space-around;
+            margin: 16px 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            margin: 8px;
+        }
+
+        .stat-number {
+            color: #5865f2;
+            font-size: 20px;
+            font-weight: 600;
+            display: block;
+        }
+
+        .stat-label {
+            color: #b9bbbe;
+            font-size: 13px;
+        }
+
+        .tips-section {
+            background: #36393f;
+            border: 1px solid #5865f2;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .tips-title {
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .tip-item {
+            margin: 12px 0;
+            color: #dcddde;
+            font-size: 14px;
+        }
+
+        .tip-label {
+            font-weight: 600;
+            color: #5865f2;
+        }
+
+        .footer-section {
+            background: #23272a;
+            padding: 24px 32px;
+            font-size: 12px;
+            color: #72767d;
+            text-align: center;
+            line-height: 1.5;
+            border-top: 1px solid #40444b;
+        }
+
+        .footer-links {
+            margin: 16px 0;
+        }
+
+        .footer-links a {
+            color: #00aff4;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            margin: 16px 0;
+        }
+
+        .social-links a {
+            color: #00aff4;
+            text-decoration: none;
+            margin: 0 6px;
+            font-size: 12px;
+        }
+
+        .secondary-links a {
+            color: #5865f2;
+        }
+
+        .unsubscribe {
+            margin-top: 16px;
+            font-size: 11px;
+            color: #72767d;
+        }
+
+        .unsubscribe a {
+            color: #00aff4;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body class="email-body">
+    <table align="center" cellpadding="0" cellspacing="0" width="100%" class="email-container">
+        <tr>
+            <td class="header-section">
+                <img src="https://upload.wikimedia.org/wikipedia/ru/thumb/b/b7/Discord_logo_svg.svg/675px-Discord_logo_svg.svg.png?20210514092409"
+                    class="logo" alt="">
+            </td>
+        </tr>
+        <tr>
+            <td class="content-section">
+                <div class="greeting">Привіт,</div>
+
+                <div class="main-title">Нові можливості в Discord вже доступні!</div>
+
+                <p>Ми раді поділитися з вами останніми оновленнями Discord, які роблять спілкування з друзями ще
+                    зручнішим та веселішим. Наша команда постійно працює над покращенням платформи для вас.</p>
+
+                <div class="update-info">
+                    <strong>Що нового в цьому оновленні:</strong><br>
+                    Покращення якості голосових дзвінків, нові можливості для серверів та оновлений мобільний додаток.
+                </div>
+
+                <div class="feature-section">
+                    <div class="feature-title">Основні покращення:</div>
+
+                    <div class="feature-list">
+                        <div class="feature-item">Покращена якість звуку в голосових каналах</div>
+                        <div class="feature-item">Нові інструменти модерації для адміністраторів серверів</div>
+                        <div class="feature-item">Розширені налаштування конфіденційності</div>
+                        <div class="feature-item">Оновлений інтерфейс мобільного додатка</div>
+                        <div class="feature-item">Покращена синхронізація між пристроями</div>
+                    </div>
+                </div>
+
+                <div class="button-section">
+                    <p style="margin-bottom: 16px; color: #dcddde;">Оновіть Discord, щоб скористатися новими функціями:
+                    </p>
+                    <a href="https://discord.com/download" class="discord-button">
+                        Завантажити оновлення
+                    </a>
+                </div>
+
+                <div class="secondary-links">
+                    <a href="https://support.discord.com/hc/en-us/articles/214836687-Discord-Store-FAQ">Детальніше про
+                        зміни</a>
+                    <a href="https://support.discord.com">Центр підтримки</a>
+                    <a href="https://discord.com/blog">Блог Discord</a>
+                </div>
+
+                <div class="community-stats">
+                    <div class="stats-title">Discord сьогодні:</div>
+
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <span class="stat-number">150M+</span>
+                            <span class="stat-label">користувачів щомісяця</span>
+                        </div>
+
+                        <div class="stat-item">
+                            <span class="stat-number">19M+</span>
+                            <span class="stat-label">активних серверів</span>
+                        </div>
+
+                        <div class="stat-item">
+                            <span class="stat-number">4B+</span>
+                            <span class="stat-label">повідомлень щодня</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tips-section">
+                    <div class="tips-title">Корисні поради:</div>
+
+                    <div class="tip-item">
+                        <span class="tip-label">Швидкі клавіші:</span> Натисніть Ctrl+/ для перегляду всіх гарячих
+                        клавіш
+                    </div>
+
+                    <div class="tip-item">
+                        <span class="tip-label">Статуси:</span> Налаштуйте автоматичні статуси активності для різних
+                        ігор
+                    </div>
+
+                    <div class="tip-item">
+                        <span class="tip-label">Організація:</span> Використовуйте папки серверів для кращої організації
+                    </div>
+                </div>
+
+                <p>Якщо у вас виникли питання або потрібна допомога, наша служба підтримки завжди готова допомогти. Ви
+                    також можете знайти відповіді на часті питання в нашому центрі підтримки.</p>
+
+                <p>Дякуємо, що ви з нами!</p>
+
+                <p>З повагою,<br>
+                    Команда Discord</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="footer-section">
+                <div class="social-links">
+                    <a href="https://twitter.com/discord">Twitter</a>
+                    <a href="https://www.youtube.com/discord">YouTube</a>
+                    <a href="https://www.instagram.com/discord">Instagram</a>
+                    <a href="https://www.tiktok.com/@discord">TikTok</a>
+                </div>
+
+                <div class="footer-links">
+                    <a href="https://discord.com">Головна сторінка</a>
+                    <a href="https://support.discord.com">Підтримка</a>
+                    <a href="https://discord.com/blog">Блог</a>
+                    <a href="https://discord.com/jobs">Вакансії</a>
+                </div>
+
+                © 2024 Discord Inc. Всі права захищені.<br>
+                444 De Haro Street, Suite 200, San Francisco, CA 94107
+
+                <div class="unsubscribe">
+                    Ви отримали цей лист, оскільки підписані на оновлення Discord.<br>
+                    <a href="#">Керувати налаштуваннями електронної пошти</a> | <a href="#">Відписатися</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

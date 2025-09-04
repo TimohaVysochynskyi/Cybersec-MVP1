@@ -1,0 +1,92 @@
+[
+  {
+    "id": "1",
+    "from": "CyberSec Platform",
+    "fromEmail": "no-reply@cybersec-demo.com",
+    "subject": "👋 Ласкаво просимо до симуляції поштової скриньки",
+    "date": "2025-08-17T09:15:00Z",
+    "isPhishing": false,
+    "contentPath": "/emails/1.html"
+  },
+  {
+    "id": "2",
+    "from": "Google Support",
+    "fromEmail": "security-team@googl3-support.com",
+    "subject": "Ваш акаунт буде заблоковано!",
+    "date": "2025-08-17T09:20:00Z",
+    "isPhishing": true,
+    "contentPath": "/emails/2.html"
+  },
+  {
+    "id": "3",
+    "from": "Steam",
+    "fromEmail": "noreply@steampowered.com",
+    "subject": "Ваш друг надіслав вам запрошення",
+    "date": "2025-08-17T09:25:00Z",
+    "isPhishing": false,
+    "contentPath": "/emails/3.html"
+  },
+  {
+    "id": "4",
+    "from": "PayPal Security",
+    "fromEmail": "paypal-alert@secure-paypa1.com",
+    "subject": "Підозріла активність на вашому рахунку",
+    "date": "2025-08-17T09:30:00Z",
+    "isPhishing": true,
+    "contentPath": "/emails/4.html"
+  },
+  {
+    "id": "5",
+    "from": "Epic Games",
+    "fromEmail": "login@epicgam3s.net",
+    "subject": "Хтось увійшов у ваш акаунт",
+    "date": "2025-08-17T09:40:00Z",
+    "isPhishing": true,
+    "contentPath": "/emails/5.html"
+  },
+  {
+    "id": "6",
+    "from": "Discord",
+    "fromEmail": "noreply@discord.com",
+    "subject": "Нові оновлення сервісу",
+    "date": "2025-08-17T09:50:00Z",
+    "isPhishing": false,
+    "contentPath": "/emails/6.html"
+  },
+  {
+    "id": "7",
+    "from": "Netflix",
+    "fromEmail": "billing@netfliix-update.com",
+    "subject": "Проблема з вашим платежем",
+    "date": "2025-08-17T10:00:00Z",
+    "isPhishing": true,
+    "contentPath": "/emails/7.html"
+  },
+  {
+    "id": "8",
+    "from": "GitHub",
+    "fromEmail": "noreply@github.com",
+    "subject": "Нова авторизація успішна",
+    "date": "2025-08-17T10:15:00Z",
+    "isPhishing": false,
+    "contentPath": "/emails/8.html"
+  },
+  {
+    "id": "9",
+    "from": "Facebook",
+    "fromEmail": "alert@facebo0k-security.net",
+    "subject": "Ваш акаунт буде видалено!",
+    "date": "2025-08-17T10:30:00Z",
+    "isPhishing": true,
+    "contentPath": "/emails/9.html"
+  },
+  {
+    "id": "10",
+    "from": "CyberSec Platform",
+    "fromEmail": "no-reply@cybersec-demo.com",
+    "subject": "✅ Ви завершили симуляцію!",
+    "date": "2025-08-17T11:00:00Z",
+    "isPhishing": false,
+    "contentPath": "/emails/10.html"
+  }
+]

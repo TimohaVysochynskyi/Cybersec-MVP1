@@ -5,7 +5,18 @@
   padding: 16px 50px;
   display: flex;
   gap: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
+
+.item:hover {
+  background-color: #bcc8f0;
+}
+
+.item.selected {
+  background-color: #a8b7ea;
+}
+
 .image {
   width: 50px;
   height: 50px;

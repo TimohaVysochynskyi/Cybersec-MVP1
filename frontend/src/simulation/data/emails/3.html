@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Steam</title>
+    <style>
+        .email-body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, "Motiva Sans", sans-serif;
+            background: #1b2838;
+            line-height: 1.4;
+            color: #c6d4df;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #1b2838;
+        }
+
+        .header-section {
+            padding: 32px 32px 16px 32px;
+            background: linear-gradient(to bottom, #2a475e 0%, #1b2838 100%);
+            text-align: center;
+        }
+
+        .logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 16px;
+        }
+
+        .content-section {
+            padding: 24px 32px;
+            font-size: 13px;
+            color: #c6d4df;
+            line-height: 17px;
+        }
+
+        .main-title {
+            font-size: 18px;
+            font-weight: normal;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+
+        .intro-text {
+            margin-bottom: 20px;
+            color: #c6d4df;
+        }
+
+        .friend-card {
+            background: #2a475e;
+            border-radius: 3px;
+            padding: 16px;
+            margin: 20px 0;
+            border: 1px solid #364b5f;
+        }
+
+        .friend-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .friend-avatar {
+            width: 32px;
+            height: 32px;
+            background: #4e79a7;
+            border-radius: 3px;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #ffffff;
+        }
+
+        .friend-name {
+            color: #66c0f4;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .friend-status {
+            color: #8f98a0;
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+        .game-info {
+            background: #2a475e;
+            border-radius: 3px;
+            padding: 16px;
+            margin: 20px 0;
+            border: 1px solid #364b5f;
+        }
+
+        .game-title {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .game-details {
+            color: #8f98a0;
+            font-size: 12px;
+            line-height: 16px;
+        }
+
+        .game-meta {
+            margin: 8px 0;
+        }
+
+        .button-section {
+            text-align: center;
+            margin: 24px 0;
+        }
+
+        .steam-button {
+            background: linear-gradient(to bottom, #75b2ea 0%, #4d7ebb 100%);
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 2px;
+            font-weight: bold;
+            font-size: 13px;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid #3d6a9e;
+        }
+
+        .secondary-links {
+            text-align: center;
+            margin: 16px 0;
+        }
+
+        .secondary-link {
+            color: #66c0f4;
+            text-decoration: none;
+            font-size: 12px;
+            margin: 0 12px;
+        }
+
+        .divider {
+            height: 1px;
+            background: #2a475e;
+            margin: 24px 0;
+            border: none;
+        }
+
+        .tips-section {
+            background: #16202d;
+            border-radius: 3px;
+            padding: 16px;
+            margin: 20px 0;
+            border: 1px solid #2a475e;
+        }
+
+        .tips-title {
+            color: #ffffff;
+            font-weight: bold;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .tip-item {
+            margin: 8px 0;
+            color: #8f98a0;
+            font-size: 12px;
+        }
+
+        .footer-section {
+            background: #16202d;
+            padding: 24px 32px;
+            font-size: 11px;
+            color: #8f98a0;
+            text-align: center;
+            line-height: 16px;
+        }
+
+        .footer-links {
+            margin: 16px 0;
+        }
+
+        .footer-links a {
+            color: #66c0f4;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        .unsubscribe {
+            margin-top: 16px;
+            font-size: 10px;
+            color: #556772;
+        }
+
+        .unsubscribe a {
+            color: #66c0f4;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body class="email-body">
+    <table align="center" cellpadding="0" cellspacing="0" width="100%" class="email-container">
+        <tr>
+            <td class="header-section">
+                <img src="https://store.cloudflare.steamstatic.com/public/shared/images/header/logo_steam.svg"
+                    alt="Steam" class="logo" />
+            </td>
+        </tr>
+        <tr>
+            <td class="content-section">
+                <div class="main-title">You've got a friend request!</div>
+
+                <div class="intro-text">
+                    Привіт! Один з ваших друзів хоче грати з вами в Steam. Перевірте деталі нижче і приєднуйтесь до
+                    веселощів.
+                </div>
+
+                <div class="friend-card">
+                    <div class="friend-header">
+                        <div class="friend-avatar">👤</div>
+                        <div>
+                            <div class="friend-name">MaxGamer_2008</div>
+                            <div class="friend-status">В мережі • Грає в Counter-Strike 2</div>
+                        </div>
+                    </div>
+
+                    <div style="color: #8f98a0; font-size: 12px;">
+                        Ваш друг створив лоббі і чекає на вас!
+                    </div>
+                </div>
+
+                <div class="game-info">
+                    <div class="game-title">Counter-Strike 2</div>
+                    <div class="game-details">
+                        <div class="game-meta"><strong>Режим гри:</strong> Competitive</div>
+                        <div class="game-meta"><strong>Карта:</strong> de_dust2</div>
+                        <div class="game-meta"><strong>Гравці:</strong> 8/10</div>
+                        <div class="game-meta"><strong>Регіон:</strong> Europe East</div>
+                    </div>
+                </div>
+
+                <div class="button-section">
+                    <a href="steam://joinlobby/730/109775241234567890/76561198123456789" class="steam-button">
+                        Join Game
+                    </a>
+                </div>
+
+                <div class="secondary-links">
+                    <a href="https://steamcommunity.com/profiles/76561198123456789" class="secondary-link">View
+                        Profile</a>
+                    <a href="https://store.steampowered.com/app/730/" class="secondary-link">View in Store</a>
+                </div>
+
+                <hr class="divider">
+
+                <div class="tips-section">
+                    <div class="tips-title">Підказки Steam</div>
+                    <div class="tip-item">• Використовуйте голосовий чат для кращої координації команди</div>
+                    <div class="tip-item">• Перевірте Workshop для нових карт та модів</div>
+                    <div class="tip-item">• Налаштуйте свій профіль, щоб друзі могли вас легко знайти</div>
+                </div>
+
+                <div style="margin-top: 24px; font-size: 12px; color: #8f98a0;">
+                    Не готові грати зараз? Ви завжди можете приєднатися пізніше або створити власне лоббі.
+                </div>
+
+                <div style="margin-top: 20px; font-size: 12px; color: #8f98a0;">
+                    Happy Gaming!<br>
+                    The Steam Team
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="footer-section">
+                <div class="footer-links">
+                    <a href="https://store.steampowered.com">Steam Store</a>
+                    <a href="https://steamcommunity.com">Community</a>
+                    <a href="https://help.steampowered.com">Support</a>
+                    <a href="https://steamcommunity.com/my/profile">My Profile</a>
+                </div>
+
+                © Valve Corporation. All rights reserved. All trademarks are property of their respective owners in the
+                US and other countries.
+
+                <div class="unsubscribe">
+                    Valve Corporation, P.O. Box 1688, Bellevue, WA 98009<br>
+                    <a href="#">Manage your email preferences</a> | <a href="#">Privacy Policy</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

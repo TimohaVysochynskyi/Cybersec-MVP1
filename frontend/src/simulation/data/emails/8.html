@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>GitHub</title>
+    <style>
+        .email-body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+            background: #ffffff;
+            line-height: 1.6;
+            color: #24292f;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+        }
+
+        .header-section {
+            padding: 32px 32px 24px 32px;
+            text-align: center;
+            background: #ffffff;
+            border-bottom: 1px solid #d0d7de;
+        }
+
+        .logo {
+            width: 32px;
+            height: 32px;
+            margin-bottom: 16px;
+        }
+
+        .content-section {
+            padding: 32px;
+            font-size: 15px;
+            color: #24292f;
+            line-height: 1.6;
+        }
+
+        .greeting {
+            margin-bottom: 24px;
+            font-size: 16px;
+        }
+
+        .main-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #24292f;
+            margin-bottom: 20px;
+        }
+
+        .login-info {
+            background: #f6f8fa;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .info-title {
+            font-weight: 600;
+            color: #24292f;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #e1e4e8;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            font-weight: 500;
+            color: #656d76;
+        }
+
+        .detail-value {
+            color: #24292f;
+            font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 14px;
+        }
+
+        .location-info {
+            background: #f6f8fa;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+
+        .location-title {
+            font-weight: 500;
+            color: #24292f;
+            margin-bottom: 8px;
+        }
+
+        .location-text {
+            color: #656d76;
+            font-size: 14px;
+        }
+
+        .security-note {
+            background: #fff8e5;
+            border: 1px solid #d4a72c;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 20px 0;
+        }
+
+        .note-text {
+            color: #744500;
+            font-size: 14px;
+        }
+
+        .actions-section {
+            background: #f6f8fa;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 24px 0;
+            text-align: center;
+        }
+
+        .github-button {
+            background: #2da44e;
+            color: #ffffff;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 14px;
+            display: inline-block;
+            margin: 4px 8px;
+        }
+
+        .github-button:hover {
+            background: #2c974b;
+        }
+
+        .secondary-button {
+            background: #f6f8fa;
+            color: #24292f;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 14px;
+            display: inline-block;
+            margin: 4px 8px;
+            border: 1px solid #d0d7de;
+        }
+
+        .secondary-button:hover {
+            background: #f3f4f6;
+        }
+
+        .activity-section {
+            margin: 24px 0;
+        }
+
+        .activity-title {
+            font-weight: 600;
+            color: #24292f;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .activity-list {
+            background: #f6f8fa;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .activity-item {
+            padding: 12px 16px;
+            border-bottom: 1px solid #d0d7de;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .activity-text {
+            color: #24292f;
+            font-size: 14px;
+        }
+
+        .activity-time {
+            color: #656d76;
+            font-size: 13px;
+        }
+
+        .help-section {
+            background: #dbeafe;
+            border: 1px solid #3b82f6;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 24px 0;
+        }
+
+        .help-title {
+            font-weight: 600;
+            color: #1e40af;
+            margin-bottom: 8px;
+        }
+
+        .help-text {
+            color: #1e40af;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .footer-section {
+            background: #f6f8fa;
+            padding: 24px 32px;
+            font-size: 12px;
+            color: #656d76;
+            text-align: center;
+            line-height: 1.5;
+            border-top: 1px solid #d0d7de;
+        }
+
+        .footer-links {
+            margin: 16px 0;
+        }
+
+        .footer-links a {
+            color: #0969da;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .disclaimer {
+            font-size: 11px;
+            color: #8c959f;
+            margin-top: 16px;
+            line-height: 1.4;
+        }
+
+        .disclaimer a {
+            color: #0969da;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body class="email-body">
+    <table align="center" cellpadding="0" cellspacing="0" width="100%" class="email-container">
+        <tr>
+            <td class="header-section">
+                <svg class="logo" viewBox="0 0 16 16" version="1.1" width="32" height="32" aria-hidden="true">
+                    <path fill="#24292f"
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                    </path>
+                </svg>
+                <h1 style="margin: 8px 0 0 0; font-size: 18px; font-weight: 600; color: #24292f;">GitHub</h1>
+            </td>
+        </tr>
+        <tr>
+            <td class="content-section">
+                <div class="greeting">Привіт,</div>
+
+                <div class="main-title">Новий вхід у ваш акаунт GitHub</div>
+
+                <p>Ми зафіксували новий вхід у ваш акаунт GitHub. Якщо це були ви, жодних дій не потрібно. Якщо ні, будь
+                    ласка, негайно змініть пароль.</p>
+
+                <div class="login-info">
+                    <div class="info-title">Деталі входу:</div>
+
+                    <div class="detail-row">
+                        <span class="detail-label">Дата та час:</span>
+                        <span class="detail-value">17 серпня 2024, 14:32 UTC</span>
+                    </div>
+
+                    <div class="detail-row">
+                        <span class="detail-label">IP-адреса:</span>
+                        <span class="detail-value">91.202.11.47</span>
+                    </div>
+
+                    <div class="detail-row">
+                        <span class="detail-label">User Agent:</span>
+                        <span class="detail-value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36</span>
+                    </div>
+
+                    <div class="location-info">
+                        <div class="location-title">Локація:</div>
+                        <div class="location-text">Київ, Київська область, Україна</div>
+                    </div>
+                </div>
+
+                <div class="security-note">
+                    <div class="note-text">
+                        <strong>Примітка безпеки:</strong> Якщо ви не розпізнаєте цей вхід, рекомендуємо негайно змінити
+                        пароль та перевірити налаштування безпеки вашого акаунта.
+                    </div>
+                </div>
+
+                <div class="activity-section">
+                    <div class="activity-title">Нещодавня активність:</div>
+
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <span class="activity-text">Вхід у акаунт</span>
+                            <span class="activity-time">Зараз</span>
+                        </div>
+
+                        <div class="activity-item">
+                            <span class="activity-text">Перегляд репозиторію cybersec-mvp</span>
+                            <span class="activity-time">10 хвилин тому</span>
+                        </div>
+
+                        <div class="activity-item">
+                            <span class="activity-text">Push до main гілки</span>
+                            <span class="activity-time">2 години тому</span>
+                        </div>
+
+                        <div class="activity-item">
+                            <span class="activity-text">Створення нового issue</span>
+                            <span class="activity-time">1 день тому</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions-section">
+                    <p style="margin-bottom: 16px; color: #24292f;">Керування безпекою акаунта:</p>
+                    <a href="https://github.com/settings/security-log" class="github-button">
+                        Журнал безпеки
+                    </a>
+                    <a href="https://github.com/settings/security" class="secondary-button">
+                        Налаштування безпеки
+                    </a>
+                    <a href="https://github.com/settings/sessions" class="secondary-button">
+                        Активні сесії
+                    </a>
+                </div>
+
+                <div class="help-section">
+                    <div class="help-title">Поради щодо безпеки:</div>
+                    <div class="help-text">
+                        • Використовуйте унікальний надійний пароль<br>
+                        • Увімкніть двофакторну автентифікацію<br>
+                        • Регулярно перевіряйте активні сесії<br>
+                        • Не використовуйте GitHub на загальнодоступних комп'ютерах
+                    </div>
+                </div>
+
+                <p>Якщо у вас є питання щодо безпеки вашого акаунта, будь ласка, зверніться до нашої служби підтримки.
+                </p>
+
+                <p>З повагою,<br>
+                    Команда GitHub</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="footer-section">
+                <div class="footer-links">
+                    <a href="https://github.com/settings/security">Безпека</a>
+                    <a href="https://docs.github.com">Документація</a>
+                    <a href="https://support.github.com">Підтримка</a>
+                    <a href="https://github.blog">Блог</a>
+                </div>
+
+                © 2024 GitHub, Inc.<br>
+                88 Colin P Kelly Jr St, San Francisco, CA 94107
+
+                <div class="disclaimer">
+                    Ви отримали цей лист, оскільки у налаштуваннях увімкнено сповіщення про входи в акаунт.<br>
+                    <a href="https://github.com/settings/notifications">Керувати налаштуваннями сповіщень</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

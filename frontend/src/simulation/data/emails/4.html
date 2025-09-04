@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>PayPal</title>
+    <style>
+        .email-body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: #f5f7fa;
+            line-height: 1.6;
+            color: #2c2e2f;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+        }
+
+        .header-section {
+            padding: 24px 32px 16px 32px;
+            background: #ffffff;
+            border-bottom: 1px solid #eaeced;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+        }
+
+        .content-section {
+            padding: 32px;
+            font-size: 15px;
+            color: #2c2e2f;
+            line-height: 1.6;
+        }
+
+        .greeting {
+            margin-bottom: 24px;
+            font-size: 16px;
+            color: #2c2e2f;
+        }
+
+        .main-message {
+            margin-bottom: 24px;
+        }
+
+        .info-box {
+            background: #f7f9fc;
+            border-left: 4px solid #0070ba;
+            padding: 20px;
+            margin: 24px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .activity-section {
+            background: #fafbfc;
+            border: 1px solid #eaeced;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .activity-title {
+            font-weight: 600;
+            color: #2c2e2f;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .activity-item {
+            margin: 8px 0;
+            color: #2c2e2f;
+            font-size: 14px;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .activity-item:before {
+            content: "•";
+            color: #0070ba;
+            position: absolute;
+            left: 0;
+        }
+
+        .button-section {
+            text-align: center;
+            margin: 32px 0;
+            padding: 24px;
+            background: #fafbfc;
+            border-radius: 6px;
+        }
+
+        .paypal-button {
+            background: #0070ba;
+            color: #ffffff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 15px;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .paypal-button:hover {
+            background: #005ea6;
+        }
+
+        .help-section {
+            background: #f0f8ff;
+            border: 1px solid #d6ebff;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .help-title {
+            font-weight: 600;
+            color: #2c2e2f;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .help-item {
+            margin: 6px 0;
+            color: #2c2e2f;
+            font-size: 14px;
+        }
+
+        .secondary-info {
+            font-size: 14px;
+            color: #6c7378;
+            margin: 24px 0;
+            line-height: 1.5;
+        }
+
+        .case-id {
+            font-size: 13px;
+            color: #6c7378;
+            font-family: "Courier New", monospace;
+            background: #f7f9fc;
+            padding: 8px 12px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 16px;
+        }
+
+        .footer-section {
+            background: #f5f7fa;
+            padding: 24px 32px;
+            font-size: 12px;
+            color: #6c7378;
+            text-align: center;
+            line-height: 1.5;
+            border-top: 1px solid #eaeced;
+        }
+
+        .footer-links {
+            margin: 16px 0;
+        }
+
+        .footer-links a {
+            color: #0070ba;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .disclaimer {
+            font-size: 11px;
+            color: #8c9296;
+            margin-top: 16px;
+            line-height: 1.4;
+        }
+
+        .time-info {
+            background: #fff8e1;
+            border: 1px solid #ffc107;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .time-text {
+            color: #8a6914;
+            font-weight: 500;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body class="email-body">
+    <table align="center" cellpadding="0" cellspacing="0" width="100%" class="email-container">
+        <tr>
+            <td class="header-section">
+                <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal"
+                    class="logo" />
+            </td>
+        </tr>
+        <tr>
+            <td class="content-section">
+                <div class="greeting">Вітаємо,</div>
+
+                <div class="main-message">
+                    Ми помітили деяку незвичну активність в вашому акаунті PayPal і тимчасово обмежили деякі функції як
+                    запобіжний захід. Це стандартна процедура безпеки для захисту вашого рахунку.
+                </div>
+
+                <div class="info-box">
+                    <strong>Інформація про обмеження:</strong><br>
+                    Тимчасово обмежено надсилання та отримання коштів до завершення перевірки безпеки.
+                </div>
+
+                <div class="activity-section">
+                    <div class="activity-title">Виявлена активність:</div>
+                    <div class="activity-item">Вхід з нового пристрою</div>
+                    <div class="activity-item">Спроба зміни контактної інформації</div>
+                    <div class="activity-item">Незвичайний паттерн транзакцій</div>
+                    <div class="activity-item">Запит на підключення нової картки</div>
+                </div>
+
+                <div class="time-info">
+                    <div class="time-text">
+                        Щоб уникнути тривалих обмежень, будь ласка, підтвердьте свою особу протягом 48 годин
+                    </div>
+                </div>
+
+                <div class="main-message">
+                    Для відновлення повного доступу до вашого рахунку, будь ласка, пройдіть швидку перевірку безпеки.
+                    Цей процес займає всього кілька хвилин і допомагає нам переконатися, що ваш рахунок захищений.
+                </div>
+
+                <div class="button-section">
+                    <p style="margin-bottom: 16px; color: #2c2e2f;">Натисніть кнопку нижче, щоб продовжити:</p>
+                    <a href="https://paypal.com/webapps/mpp/account-security" class="paypal-button">
+                        Підтвердити особу
+                    </a>
+                </div>
+
+                <div class="help-section">
+                    <div class="help-title">Що потрібно для перевірки:</div>
+                    <div class="help-item">✓ Підтвердження контактної інформації</div>
+                    <div class="help-item">✓ Відповіді на питання безпеки</div>
+                    <div class="help-item">✓ Перевірка особистих даних</div>
+                </div>
+
+                <div class="secondary-info">
+                    Якщо ви не розпізнаєте цю активність або маєте питання, будь ласка, зв'яжітеся з нашою службою
+                    підтримки. Ми завжди готові допомогти вам захистити ваш рахунок.
+                </div>
+
+                <div class="secondary-info">
+                    Дякуємо за розуміння та допомогу в підтримці безпеки нашої спільноти.
+                </div>
+
+                <div style="margin-top: 32px;">
+                    З повагою,<br>
+                    Команда безпеки PayPal
+                </div>
+
+                <div class="case-id">
+                    Номер звернення: PP-D-2024-0847239
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="footer-section">
+                <div class="footer-links">
+                    <a href="https://www.paypal.com/security">Центр безпеки</a>
+                    <a href="https://www.paypal.com/help">Допомога</a>
+                    <a href="https://www.paypal.com/legal">Правові документи</a>
+                    <a href="https://www.paypal.com/privacy">Конфіденційність</a>
+                </div>
+
+                © 2024 PayPal, Inc. Всі права захищені.<br>
+                PayPal (Europe) S.à r.l. et Cie, S.C.A.<br>
+                22-24 Boulevard Royal, L-2449 Luxembourg
+
+                <div class="disclaimer">
+                    Цей лист надіслано на адресу, пов'язану з вашим акаунтом PayPal. PayPal ніколи не запитує
+                    конфіденційну інформацію електронною поштою. Дізнайтеся більше про захист від шахрайства на
+                    paypal.com/security.
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

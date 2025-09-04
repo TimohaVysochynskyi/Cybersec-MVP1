@@ -59,6 +59,7 @@
   height: 105px;
   max-height: 100px;
   position: relative;
+  cursor: pointer;
 }
 .item::before {
   content: "";
