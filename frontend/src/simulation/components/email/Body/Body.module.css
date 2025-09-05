@@ -44,11 +44,22 @@
   height: 40px;
   background-color: rgba(152, 53, 71, 1);
   border-radius: 50%;
+  flex-shrink: 0;
 }
 .title {
-  font-size: 24px;
+  font-size: 20px;
   line-height: 100%;
-  font-weight: 700;
+  font-weight: 500;
+  color: rgba(4, 2, 112, 1);
+}
+.arrow {
+  color: rgba(4, 2, 112, 1);
+}
+.fromEmail {
+  font-size: 18px;
+  color: rgba(4, 2, 112, 1);
+  font-weight: 400;
+  font-style: italic;
 }
 .actionBtns {
   display: flex;
@@ -61,8 +72,7 @@
   background-color: rgba(207, 216, 246, 1);
   border: none;
   border-radius: 16px;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 18px;
   line-height: 100%;
   padding: 8px 20px;
   gap: 10px;
@@ -74,12 +84,210 @@
   background-color: rgba(185, 200, 240, 1);
 }
 .icon {
-  height: 24px;
+  height: 20px;
 }
 .content {
   width: 100%;
   height: fit-content;
-  background-color: rgba(207, 216, 246, 1);
+  background-color: transparent;
   border-radius: 8px;
-  padding: 20px 60px;
+  padding: 0;
+  /* Reset all default styling for email content */
+}
+
+/* Global styles for email content */
+.content :global(body),
+.content :global(.email-body) {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  background: transparent !important;
+}
+
+.content :global(table) {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.content :global(.email-container) {
+  max-width: none !important;
+  width: 100% !important;
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+/* Ensure Discord emails have proper dark theme background */
+.content :global(.discord-body) {
+  background: #36393f !important;
+}
+
+.content :global(.discord-container) {
+  background: #36393f !important;
+}
+
+/* Ensure Steam emails have proper dark theme background */
+.content :global(.steam-body) {
+  background: #1b2838 !important;
+}
+
+.content :global(.steam-container) {
+  background: #1b2838 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1600px) {
+  .container {
+    gap: 18px;
+    border-radius: 10px 10px 0 0;
+    padding: 18px 54px;
+  }
+  .container::-webkit-scrollbar {
+    width: 18px;
+  }
+  .container::-webkit-scrollbar-thumb {
+    border: 3px solid #e8ecfc;
+  }
+  .titleWrapper {
+    gap: 18px;
+  }
+  .image {
+    width: 36px;
+    height: 36px;
+  }
+  .title {
+    font-size: 22px;
+  }
+  .actionBtns {
+    gap: 14px;
+  }
+  .button {
+    border-radius: 14px;
+    font-size: 18px;
+    padding: 7px 18px;
+    gap: 9px;
+  }
+  .icon {
+    height: 20px;
+  }
+  .content :global(.email-container) {
+    border-radius: 7px !important;
+  }
+}
+
+@media (max-width: 1440px) {
+  .container {
+    gap: 16px;
+    border-radius: 9px 9px 0 0;
+    padding: 16px 48px;
+  }
+  .container::-webkit-scrollbar {
+    width: 16px;
+  }
+  .container::-webkit-scrollbar-thumb {
+    border: 3px solid #e8ecfc;
+  }
+  .titleWrapper {
+    gap: 16px;
+  }
+  .image {
+    width: 34px;
+    height: 34px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .actionBtns {
+    gap: 12px;
+  }
+  .button {
+    border-radius: 12px;
+    font-size: 17px;
+    padding: 6px 16px;
+    gap: 8px;
+  }
+  .icon {
+    height: 18px;
+  }
+  .content :global(.email-container) {
+    border-radius: 6px !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    gap: 14px;
+    border-radius: 8px 8px 0 0;
+    padding: 14px 42px;
+  }
+  .container::-webkit-scrollbar {
+    width: 14px;
+  }
+  .container::-webkit-scrollbar-thumb {
+    border: 2px solid #e8ecfc;
+  }
+  .titleWrapper {
+    gap: 14px;
+  }
+  .image {
+    width: 32px;
+    height: 32px;
+  }
+  .title {
+    font-size: 18px;
+  }
+  .actionBtns {
+    gap: 10px;
+  }
+  .button {
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 5px 14px;
+    gap: 7px;
+  }
+  .icon {
+    height: 16px;
+  }
+  .content :global(.email-container) {
+    border-radius: 5px !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    gap: 12px;
+    border-radius: 7px 7px 0 0;
+    padding: 12px 36px;
+  }
+  .container::-webkit-scrollbar {
+    width: 12px;
+  }
+  .container::-webkit-scrollbar-thumb {
+    border: 2px solid #e8ecfc;
+  }
+  .titleWrapper {
+    gap: 12px;
+  }
+  .image {
+    width: 28px;
+    height: 28px;
+  }
+  .title {
+    font-size: 16px;
+  }
+  .actionBtns {
+    gap: 8px;
+  }
+  .button {
+    border-radius: 8px;
+    font-size: 15px;
+    padding: 4px 12px;
+    gap: 6px;
+  }
+  .icon {
+    height: 14px;
+  }
+  .content :global(.email-container) {
+    border-radius: 4px !important;
+  }
 }

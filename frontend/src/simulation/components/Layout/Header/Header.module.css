@@ -42,3 +42,100 @@
   width: 23px;
   height: 22px;
 }
+
+/* Responsive Design */
+@media (max-width: 1600px) {
+  .header {
+    height: 56px;
+    padding: 0 36px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .email {
+    font-size: 18px;
+  }
+  .controls {
+    gap: 20px;
+  }
+  .button {
+    width: 22px;
+    height: 22px;
+  }
+  .button:last-child {
+    width: 20px;
+    height: 19px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .header {
+    height: 52px;
+    padding: 0 32px;
+  }
+  .title {
+    font-size: 19px;
+  }
+  .email {
+    font-size: 17px;
+  }
+  .controls {
+    gap: 18px;
+  }
+  .button {
+    width: 20px;
+    height: 20px;
+  }
+  .button:last-child {
+    width: 18px;
+    height: 17px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header {
+    height: 48px;
+    padding: 0 28px;
+  }
+  .title {
+    font-size: 18px;
+  }
+  .email {
+    font-size: 16px;
+  }
+  .controls {
+    gap: 16px;
+  }
+  .button {
+    width: 18px;
+    height: 18px;
+  }
+  .button:last-child {
+    width: 16px;
+    height: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    height: 44px;
+    padding: 0 24px;
+  }
+  .title {
+    font-size: 16px;
+  }
+  .email {
+    font-size: 15px;
+  }
+  .controls {
+    gap: 14px;
+  }
+  .button {
+    width: 16px;
+    height: 16px;
+  }
+  .button:last-child {
+    width: 14px;
+    height: 13px;
+  }
+}

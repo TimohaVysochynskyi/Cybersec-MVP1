@@ -20,3 +20,52 @@
   color: #666;
   font-size: 18px;
 }
+
+/* Responsive Design */
+@media (max-width: 1600px) {
+  .email {
+    width: 82%;
+    gap: 20px;
+  }
+  .noSelection {
+    height: 360px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .email {
+    width: 84%;
+    gap: 18px;
+  }
+  .noSelection {
+    height: 320px;
+    border-radius: 9px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .email {
+    width: 86%;
+    gap: 16px;
+  }
+  .noSelection {
+    height: 280px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .email {
+    width: 88%;
+    gap: 14px;
+  }
+  .noSelection {
+    height: 240px;
+    border-radius: 7px;
+    font-size: 13px;
+  }
+}

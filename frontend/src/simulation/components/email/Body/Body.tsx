@@ -15,9 +15,7 @@ export default function Body({ email }: BodyProps) {
     const loadEmailContent = async () => {
       setLoading(true);
       try {
-        const response = await fetch(
-          `/src/simulation/data${email.contentPath}`
-        );
+        const response = await fetch(email.contentPath);
         if (response.ok) {
           const content = await response.text();
           setEmailContent(content);
@@ -45,7 +43,9 @@ export default function Body({ email }: BodyProps) {
         <div className={css.titleWrapper}>
           <div className={css.image}></div>
           <span className={css.title}>
-            {email.from} &gt; {email.fromEmail}
+            {email.from}
+            <span className={css.arrow}> &gt;</span>
+            <span className={css.fromEmail}> {email.fromEmail}</span>
           </span>
         </div>
         <div className={css.actionBtns}>

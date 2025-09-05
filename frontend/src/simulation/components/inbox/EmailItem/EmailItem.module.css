@@ -23,13 +23,13 @@
   min-width: 50px;
   background-color: #b62b3a;
   border-radius: 50%;
+  flex-shrink: 0;
 }
 .content {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   height: 100%;
-  justify-content: space-between;
   flex: 1;
   min-width: 0; /* Дозволяє контенту скорочуватися */
 }
@@ -43,12 +43,12 @@
 .subject {
   font-size: 20px;
   font-weight: 600;
-  line-height: 100%;
+  line-height: 115%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   flex: 1;
-  min-width: 0; /* Дозволяє тексту скорочуватися */
+  min-width: 0;
   margin-right: 16px;
 }
 .date {
@@ -58,7 +58,7 @@
 }
 .text {
   font-size: 18px;
-  line-height: 100%;
+  line-height: 115%;
   color: #999999;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -67,4 +67,105 @@
   overflow: hidden;
   width: 100%;
   word-wrap: break-word;
+}
+
+/* Responsive Design */
+@media (max-width: 1600px) {
+  .item {
+    padding: 14px 44px;
+    gap: 14px;
+  }
+  .image {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+  }
+  .content {
+    gap: 5px;
+  }
+  .subject {
+    font-size: 18px;
+    margin-right: 14px;
+  }
+  .date {
+    font-size: 16px;
+  }
+  .text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .item {
+    padding: 12px 38px;
+    gap: 12px;
+  }
+  .image {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+  }
+  .content {
+    gap: 4px;
+  }
+  .subject {
+    font-size: 17px;
+    margin-right: 12px;
+  }
+  .date {
+    font-size: 15px;
+  }
+  .text {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .item {
+    padding: 10px 32px;
+    gap: 10px;
+  }
+  .image {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+  }
+  .content {
+    gap: 3px;
+  }
+  .subject {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  .date {
+    font-size: 14px;
+  }
+  .text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .item {
+    padding: 8px 28px;
+    gap: 8px;
+  }
+  .image {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+  }
+  .content {
+    gap: 2px;
+  }
+  .subject {
+    font-size: 15px;
+    margin-right: 8px;
+  }
+  .date {
+    font-size: 13px;
+  }
+  .text {
+    font-size: 13px;
+  }
 }

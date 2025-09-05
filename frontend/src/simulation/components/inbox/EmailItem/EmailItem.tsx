@@ -27,13 +27,11 @@ export default function EmailItem({
         <div className={css.image}></div>
         <div className={css.content}>
           <div className={css.row}>
-            <span className={css.subject}>{email.subject}</span>
+            <span className={css.subject}>{email.from}</span>
             <span className={css.date}>{formatDate(email.date)}</span>
           </div>
 
-          <span className={css.text}>
-            {email.from} • {email.fromEmail}
-          </span>
+          <span className={css.text}>{email.fromEmail}</span>
         </div>
       </div>
     </>
