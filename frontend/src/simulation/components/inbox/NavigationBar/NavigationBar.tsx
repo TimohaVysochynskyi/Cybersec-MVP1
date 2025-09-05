@@ -1,10 +1,30 @@
 import css from "./NavigationBar.module.css";
+import type { EmailCategory, UserProgress } from "../../../../types/email";
 
-export default function NavigationBar() {
+interface NavigationBarProps {
+  currentCategory: EmailCategory;
+  onCategoryChange: (category: EmailCategory) => void;
+  userProgress: UserProgress;
+  searchQuery: string;
+  onSearchChange: (query: string) => void;
+}
+
+export default function NavigationBar({
+  currentCategory,
+  onCategoryChange,
+  userProgress,
+  searchQuery,
+  onSearchChange,
+}: NavigationBarProps) {
   return (
     <>
       <nav className={css.nav}>
-        <button className={css.button}>
+        <button
+          className={`${css.button} ${
+            currentCategory === "all" ? css.active : ""
+          }`}
+          onClick={() => onCategoryChange("all")}
+        >
           <svg
             className={css.icon}
             viewBox="0 0 28 24"
@@ -16,9 +36,14 @@ export default function NavigationBar() {
               fill="#3440E7"
             />
           </svg>
-          Уся пошта
+          <span>Уся пошта</span>
         </button>
-        <button className={`${css.button} ${css.active}`}>
+        <button
+          className={`${css.button} ${
+            currentCategory === "inbox" ? css.active : ""
+          }`}
+          onClick={() => onCategoryChange("inbox")}
+        >
           <svg
             className={css.icon}
             viewBox="0 0 26 24"
@@ -30,9 +55,14 @@ export default function NavigationBar() {
               fill="#3440E7"
             />
           </svg>
-          Вхідні
+          <span>Вхідні</span>
         </button>
-        <button className={css.button}>
+        <button
+          className={`${css.button} ${
+            currentCategory === "spam" ? css.active : ""
+          }`}
+          onClick={() => onCategoryChange("spam")}
+        >
           <svg
             className={css.icon}
             viewBox="0 0 27 24"
@@ -44,8 +74,22 @@ export default function NavigationBar() {
               fill="#3440E7"
             />
           </svg>
-          Небажана пошта
+          <span>Небажана пошта</span>
         </button>
+
+        {/* Прогрес користувача */}
+        <div className={css.progressWrapper}>
+          <div className={css.progressInfo}>
+            <span className={css.progressText}>
+              Прогрес: {userProgress.points}/
+              {userProgress.totalClassifiableEmails}
+            </span>
+            <span className={css.percentage}>
+              {userProgress.completionPercentage}%
+            </span>
+          </div>
+        </div>
+
         <label htmlFor="searchInput" className={css.searchWrapper}>
           <svg
             className={css.searchIcon}
@@ -67,6 +111,8 @@ export default function NavigationBar() {
             type="text"
             className={css.search}
             placeholder="Пошук"
+            value={searchQuery}
+            onChange={(e) => onSearchChange(e.target.value)}
           />
         </label>
       </nav>

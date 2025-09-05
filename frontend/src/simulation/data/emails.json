@@ -6,7 +6,8 @@
     "subject": "👋 Ласкаво просимо до симуляції поштової скриньки",
     "date": "2025-08-17T09:15:00Z",
     "isPhishing": false,
-    "contentPath": "/emails/1.html"
+    "contentPath": "/emails/1.html",
+    "category": "inbox"
   },
   {
     "id": "2",
@@ -15,7 +16,8 @@
     "subject": "Ваш акаунт буде заблоковано!",
     "date": "2025-08-17T09:20:00Z",
     "isPhishing": true,
-    "contentPath": "/emails/2.html"
+    "contentPath": "/emails/2.html",
+    "category": "inbox"
   },
   {
     "id": "3",
@@ -24,7 +26,8 @@
     "subject": "Ваш друг надіслав вам запрошення",
     "date": "2025-08-17T09:25:00Z",
     "isPhishing": false,
-    "contentPath": "/emails/3.html"
+    "contentPath": "/emails/3.html",
+    "category": "inbox"
   },
   {
     "id": "4",
@@ -33,7 +36,8 @@
     "subject": "Підозріла активність на вашому рахунку",
     "date": "2025-08-17T09:30:00Z",
     "isPhishing": true,
-    "contentPath": "/emails/4.html"
+    "contentPath": "/emails/4.html",
+    "category": "inbox"
   },
   {
     "id": "5",
@@ -42,7 +46,8 @@
     "subject": "Хтось увійшов у ваш акаунт",
     "date": "2025-08-17T09:40:00Z",
     "isPhishing": true,
-    "contentPath": "/emails/5.html"
+    "contentPath": "/emails/5.html",
+    "category": "inbox"
   },
   {
     "id": "6",
@@ -51,7 +56,8 @@
     "subject": "Нові оновлення сервісу",
     "date": "2025-08-17T09:50:00Z",
     "isPhishing": false,
-    "contentPath": "/emails/6.html"
+    "contentPath": "/emails/6.html",
+    "category": "inbox"
   },
   {
     "id": "7",
@@ -60,7 +66,8 @@
     "subject": "Проблема з вашим платежем",
     "date": "2025-08-17T10:00:00Z",
     "isPhishing": true,
-    "contentPath": "/emails/7.html"
+    "contentPath": "/emails/7.html",
+    "category": "inbox"
   },
   {
     "id": "8",
@@ -69,7 +76,8 @@
     "subject": "Нова авторизація успішна",
     "date": "2025-08-17T10:15:00Z",
     "isPhishing": false,
-    "contentPath": "/emails/8.html"
+    "contentPath": "/emails/8.html",
+    "category": "inbox"
   },
   {
     "id": "9",
@@ -78,7 +86,8 @@
     "subject": "Ваш акаунт буде видалено!",
     "date": "2025-08-17T10:30:00Z",
     "isPhishing": true,
-    "contentPath": "/emails/9.html"
+    "contentPath": "/emails/9.html",
+    "category": "inbox"
   },
   {
     "id": "10",
@@ -87,6 +96,7 @@
     "subject": "✅ Ви завершили симуляцію!",
     "date": "2025-08-17T11:00:00Z",
     "isPhishing": false,
-    "contentPath": "/emails/10.html"
+    "contentPath": "/emails/10.html",
+    "category": "inbox"
   }
 ]

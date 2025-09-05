@@ -27,10 +27,10 @@
     border-radius: 10px;
   }
   .subject {
-    font-size: 20px;
+    font-size: 17px;
   }
   .date {
-    font-size: 18px;
+    font-size: 15px;
   }
 }
 
@@ -40,10 +40,10 @@
     border-radius: 9px;
   }
   .subject {
-    font-size: 19px;
+    font-size: 16px;
   }
   .date {
-    font-size: 17px;
+    font-size: 14px;
   }
 }
 
@@ -53,10 +53,10 @@
     border-radius: 8px;
   }
   .subject {
-    font-size: 18px;
+    font-size: 15px;
   }
   .date {
-    font-size: 16px;
+    font-size: 13px;
   }
 }
 
@@ -66,9 +66,9 @@
     border-radius: 7px;
   }
   .subject {
-    font-size: 16px;
+    font-size: 14px;
   }
   .date {
-    font-size: 15px;
+    font-size: 12px;
   }
 }

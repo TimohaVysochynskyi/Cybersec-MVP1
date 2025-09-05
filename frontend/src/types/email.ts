@@ -6,12 +6,16 @@ export interface Email {
     date: string;
     isPhishing: boolean;
     contentPath: string;
+    category: 'inbox' | 'spam' | 'all';
 }
+
+export type EmailCategory = 'inbox' | 'spam' | 'all';
 
 export interface EmailListProps {
     emails: Email[];
     selectedEmailId: string | null;
     onEmailSelect: (email: Email) => void;
+    currentCategory: EmailCategory;
 }
 
 export interface EmailItemProps {
@@ -30,4 +34,23 @@ export interface HeadProps {
 
 export interface BodyProps {
     email: Email | null;
+    onClassifyEmail?: (emailId: string, isPhishingGuess: boolean) => void;
+    userProgress?: UserProgress;
+}
+
+export interface UserProgress {
+    points: number;
+    classifiedEmails: ClassifiedEmail[];
+    totalClassifiableEmails: number;
+    completionPercentage: number;
+    averageResponseTime: number;
+}
+
+export interface ClassifiedEmail {
+    emailId: string;
+    isPhishingGuess: boolean;
+    isCorrect: boolean;
+    timestamp: number;
+    responseTime: number; // час у мілісекундах на прийняття рішення
+    emailViewedAt: number; // коли користувач почав дивитися лист
 }

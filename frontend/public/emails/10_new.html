@@ -427,102 +427,86 @@
 
     <script>
         // Define achievement levels based on correct answers
-        const achievementLevels = [
-            {
-                level: 1,
-                title: "🌟 Цифровий Детектив",
-                description: "Ви блискуче розкриваєте підозрілі схеми і захищаєте себе від маніпуляцій у мережі!"
+        const achievementLevels = {
+            8: {
+                title: "Майстер цифрового детектива",
+                description: "Ви блискуче розпізнаєте підозрілі листи та знаєте, як захистити себе від онлайн-шахраїв!"
             },
-            {
-                level: 2,
-                title: "🔍 Медіа Аналітик",
-                description: "Ви вміло аналізуєте інформацію і розпізнаєте більшість хитрощів цифрових шахраїв."
+            7: {
+                title: "Майстер цифрового детектива",
+                description: "Ви блискуче розпізнаєте підозрілі листи та знаєте, як захистити себе від онлайн-шахраїв!"
             },
-            {
-                level: 3,
-                title: "⚠️ Обережний Користувач",
-                description: "Ви розвиваєте навички критичного мислення і вчитеся розпізнавати небезпечні сигнали."
+            6: {
+                title: "Досвідчений скептик",
+                description: "Ви вже непогано розбираєтеся у хитрощах шахраїв та умієте ставити під сумнів підозрілий контент."
             },
-            {
-                level: 4,
-                title: "📚 Початківець у Медіаграмотності",
-                description: "Ви робите перші кроки у світі безпечного інтернету. Продовжуйте навчатися!"
+            5: {
+                title: "Досвідчений скептик",
+                description: "Ви вже непогано розбираєтеся у хитрощах шахраїв та умієте ставити під сумнів підозрілий контент."
+            },
+            4: {
+                title: "Обережний користувач",
+                description: "Ви розвиваєте гарні навички критичного аналізу та починаєте розпізнавати небезпечні сигнали."
+            },
+            3: {
+                title: "Обережний користувач",
+                description: "Ви розвиваєте гарні навички критичного аналізу та починаєте розпізнавати небезпечні сигнали."
+            },
+            2: {
+                title: "Початківець у медіаграмотності",
+                description: "Ви робите перші кроки у світі цифрової безпеки. Продовжуйте навчатися та будьте пильнішими!"
+            },
+            1: {
+                title: "Початківець у медіаграмотності",
+                description: "Ви робите перші кроки у світі цифрової безпеки. Продовжуйте навчатися та будьте пильнішими!"
+            },
+            0: {
+                title: "Початківець у медіаграмотності",
+                description: "Ви робите перші кроки у світі цифрової безпеки. Продовжуйте навчатися та будьте пильнішими!"
             }
-        ];
-
-        function getAchievementByScore(correctAnswers, totalAnswers) {
-            const percentage = (correctAnswers / totalAnswers) * 100;
-
-            if (percentage >= 87.5) return achievementLevels[0]; // 7-8 з 8
-            if (percentage >= 62.5) return achievementLevels[1]; // 5-6 з 8
-            if (percentage >= 37.5) return achievementLevels[2]; // 3-4 з 8
-            return achievementLevels[3]; // 0-2 з 8
-        }
+        };
 
         // Parse results from localStorage
         function loadResults() {
-            console.log('Loading results...'); // Debug log
-
             try {
                 const storedProgress = localStorage.getItem('cybersec-user-progress');
-                console.log('Raw localStorage data:', storedProgress); // Debug log
-
                 if (storedProgress) {
                     const progress = JSON.parse(storedProgress);
-                    console.log('Parsed progress:', progress); // Debug log
                     displayResults(progress);
                     return;
                 }
 
-                console.log('No data found, using defaults'); // Debug log
                 // Display default values if no data
                 document.getElementById('correctCount').textContent = '0';
                 document.getElementById('incorrectCount').textContent = '0';
                 document.getElementById('averageTime').textContent = '0с';
-                updateAchievement(achievementLevels[3]); // Default to beginner level
+                updateAchievement(0);
             } catch (error) {
                 console.error('Error loading results:', error);
                 // Display default values
                 document.getElementById('correctCount').textContent = '0';
                 document.getElementById('incorrectCount').textContent = '0';
                 document.getElementById('averageTime').textContent = '0с';
-                updateAchievement(achievementLevels[3]); // Default to beginner level
+                updateAchievement(0);
             }
         }
 
         function displayResults(progress) {
-            console.log('Progress data:', progress); // Debug log
+            const correctAnswers = progress.classifiedEmails.filter(e => e.isCorrect).length;
+            const incorrectAnswers = progress.classifiedEmails.filter(e => !e.isCorrect).length;
+            const avgTimeSeconds = Math.round(progress.averageResponseTime / 1000);
 
-            // Extract data from progress object
-            const correctAnswers = progress.classifiedEmails ? progress.classifiedEmails.filter(e => e.isCorrect === true).length : 0;
-            const totalAnswers = progress.totalClassifiableEmails || 8;
-            const incorrectAnswers = totalAnswers - correctAnswers;
-            const avgTimeSeconds = progress.averageResponseTime ? Math.round(progress.averageResponseTime / 1000) : 0;
+            document.getElementById('correctCount').textContent = correctAnswers;
+            document.getElementById('incorrectCount').textContent = incorrectAnswers;
+            document.getElementById('averageTime').textContent = avgTimeSeconds + 'с';
 
-            console.log('Calculated:', { correctAnswers, totalAnswers, incorrectAnswers, avgTimeSeconds }); // Debug log
-
-            // Update display elements
-            const correctElement = document.getElementById('correctCount');
-            const incorrectElement = document.getElementById('incorrectCount');
-            const timeElement = document.getElementById('averageTime');
-
-            if (correctElement) correctElement.textContent = correctAnswers.toString();
-            if (incorrectElement) incorrectElement.textContent = incorrectAnswers.toString();
-            if (timeElement) timeElement.textContent = avgTimeSeconds + 'с';
-
-            // Update achievement based on performance
-            const achievement = getAchievementByScore(correctAnswers, totalAnswers);
-            updateAchievement(achievement);
+            updateAchievement(correctAnswers);
         }
 
-        function updateAchievement(achievement) {
-            console.log('Setting achievement:', achievement); // Debug log
-
-            const titleElement = document.getElementById('achievementTitle');
-            const textElement = document.getElementById('achievementText');
-
-            if (titleElement) titleElement.textContent = achievement.title;
-            if (textElement) textElement.textContent = achievement.description;
+        function updateAchievement(correctCount) {
+            const achievement = achievementLevels[correctCount] || achievementLevels[0];
+            document.getElementById('achievementTitle').textContent = achievement.title;
+            document.getElementById('achievementText').textContent = achievement.description;
         }
 
         // Load results when page loads

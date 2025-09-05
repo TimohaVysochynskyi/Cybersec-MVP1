@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import css from "./Header.module.css";
 
 export default function Header() {
@@ -27,7 +28,7 @@ export default function Header() {
               />
             </svg>
           </button>
-          <button className={css.button}>
+          <Link to="/" className={css.button}>
             <svg
               className={css.icon}
               viewBox="0 0 19 18"
@@ -51,7 +52,7 @@ export default function Header() {
                 strokeWidth="2"
               />
             </svg>
-          </button>
+          </Link>
         </div>
       </header>
     </>

@@ -83,6 +83,21 @@
 .button:hover {
   background-color: rgba(185, 200, 240, 1);
 }
+
+.button.selected {
+  background-color: rgba(62, 121, 238, 1);
+  color: white;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.feedback {
+  font-weight: bold;
+  font-size: 16px;
+}
 .icon {
   height: 20px;
 }
@@ -156,19 +171,25 @@
     height: 36px;
   }
   .title {
-    font-size: 22px;
+    font-size: 19px;
+  }
+  .fromEmail {
+    font-size: 17px;
   }
   .actionBtns {
     gap: 14px;
   }
   .button {
     border-radius: 14px;
-    font-size: 18px;
+    font-size: 17px;
     padding: 7px 18px;
     gap: 9px;
   }
   .icon {
-    height: 20px;
+    height: 19px;
+  }
+  .feedback {
+    font-size: 15px;
   }
   .content :global(.email-container) {
     border-radius: 7px !important;
@@ -195,19 +216,25 @@
     height: 34px;
   }
   .title {
-    font-size: 20px;
+    font-size: 18px;
+  }
+  .fromEmail {
+    font-size: 16px;
   }
   .actionBtns {
     gap: 12px;
   }
   .button {
     border-radius: 12px;
-    font-size: 17px;
+    font-size: 16px;
     padding: 6px 16px;
     gap: 8px;
   }
   .icon {
     height: 18px;
+  }
+  .feedback {
+    font-size: 14px;
   }
   .content :global(.email-container) {
     border-radius: 6px !important;
@@ -234,19 +261,25 @@
     height: 32px;
   }
   .title {
-    font-size: 18px;
+    font-size: 17px;
+  }
+  .fromEmail {
+    font-size: 15px;
   }
   .actionBtns {
     gap: 10px;
   }
   .button {
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 15px;
     padding: 5px 14px;
     gap: 7px;
   }
   .icon {
     height: 16px;
+  }
+  .feedback {
+    font-size: 13px;
   }
   .content :global(.email-container) {
     border-radius: 5px !important;
@@ -273,19 +306,25 @@
     height: 28px;
   }
   .title {
-    font-size: 16px;
+    font-size: 15px;
+  }
+  .fromEmail {
+    font-size: 14px;
   }
   .actionBtns {
     gap: 8px;
   }
   .button {
     border-radius: 8px;
-    font-size: 15px;
+    font-size: 14px;
     padding: 4px 12px;
     gap: 6px;
   }
   .icon {
     height: 14px;
+  }
+  .feedback {
+    font-size: 12px;
   }
   .content :global(.email-container) {
     border-radius: 4px !important;
