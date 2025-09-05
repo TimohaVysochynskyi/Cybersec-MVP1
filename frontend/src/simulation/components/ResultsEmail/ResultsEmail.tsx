@@ -29,36 +29,36 @@ export default function ResultsEmail() {
   const [currentAchievement, setCurrentAchievement] =
     useState<AchievementLevel>({
       level: 4,
-      title: "📚 Початківець у Медіаграмотності",
+      title: "📚 Початківець",
       description:
-        "Ви робите перші кроки у світі безпечного інтернету. Продовжуйте навчатися!",
+        "Ти робиш перші кроки в темі кібербезпеки. Не зупиняйся і рухайся далі!",
     });
 
   useEffect(() => {
     const achievementLevels: AchievementLevel[] = [
       {
         level: 1,
-        title: "🌟 Цифровий Детектив",
+        title: "🌟 Цифровий детектив",
         description:
-          "Ви блискуче розкриваєте підозрілі схеми і захищаєте себе від маніпуляцій у мережі!",
+          "Ти відмінно бачиш підозрілі схеми й легко захищаєш себе від обману.",
       },
       {
         level: 2,
-        title: "🔍 Медіа Аналітик",
+        title: "🔍 Аналітик",
         description:
-          "Ви вміло аналізуєте інформацію і розпізнаєте більшість хитрощів цифрових шахраїв.",
+          "Ти вже добре відрізняєш справжнє від підробки. Ще трохи — і тебе не обдуриш!",
       },
       {
         level: 3,
-        title: "⚠️ Обережний Користувач",
+        title: "⚠️ Обережний користувач",
         description:
-          "Ви розвиваєте навички критичного мислення і вчитеся розпізнавати небезпечні сигнали.",
+          "Ти починаєш помічати небезпечні сигнали. Це гарний прогрес!",
       },
       {
         level: 4,
-        title: "📚 Початківець у Медіаграмотності",
+        title: "📚 Початківець",
         description:
-          "Ви робите перші кроки у світі безпечного інтернету. Продовжуйте навчатися!",
+          "Ти тільки вчишся, але це вже крок уперед. Продовжуй тренуватись!",
       },
     ];
 
@@ -77,13 +77,9 @@ export default function ResultsEmail() {
     const loadResults = () => {
       try {
         const storedProgress = localStorage.getItem("cybersec-user-progress");
-        console.log("Loading results from localStorage...", storedProgress);
-
         if (storedProgress) {
           const progress: UserProgress = JSON.parse(storedProgress);
-          console.log("Parsed progress:", progress);
 
-          // Extract data from progress object
           const correct = progress.classifiedEmails
             ? progress.classifiedEmails.filter((e) => e.isCorrect === true)
                 .length
@@ -94,34 +90,19 @@ export default function ResultsEmail() {
             ? Math.round(progress.averageResponseTime / 1000)
             : 0;
 
-          console.log("Calculated:", {
-            correct,
-            total,
-            incorrect,
-            avgTimeSeconds,
-          });
-
-          // Update state
           setCorrectAnswers(correct);
           setIncorrectAnswers(incorrect);
           setAverageTime(avgTimeSeconds);
 
-          // Update achievement based on performance
           const achievement = getAchievementByScore(correct, total);
           setCurrentAchievement(achievement);
-
-          console.log("Setting achievement:", achievement);
         } else {
-          console.log("No progress data found, using defaults");
-          // Default values if no data
           setCorrectAnswers(0);
           setIncorrectAnswers(0);
           setAverageTime(0);
           setCurrentAchievement(achievementLevels[3]);
         }
-      } catch (error) {
-        console.error("Error loading results:", error);
-        // Default values on error
+      } catch {
         setCorrectAnswers(0);
         setIncorrectAnswers(0);
         setAverageTime(0);
@@ -141,9 +122,9 @@ export default function ResultsEmail() {
               <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
             </svg>
           </div>
-          <h1 className={css.mainTitle}>Вітаємо!</h1>
+          <h1 className={css.mainTitle}>Гарна робота!</h1>
           <p className={css.subtitle}>
-            Ви завершили тестування медіаграмотності
+            Ти пройшов тренування з фішинговими листами
           </p>
 
           <div className={css.achievementBadge}>
@@ -156,8 +137,7 @@ export default function ResultsEmail() {
 
         <div className={css.contentSection}>
           <p className={css.congratulationsText}>
-            🎯 Відмінна робота! Ви проаналізували всі листи та прокачали свою
-            медіаграмотність
+            🎯 Ти розібрав усі листи й прокачав свої навички медіаграмотності
           </p>
 
           <div className={css.resultsGrid}>
@@ -165,7 +145,7 @@ export default function ResultsEmail() {
               <h2 className={`${css.resultNumber} ${css.correct}`}>
                 {correctAnswers}
               </h2>
-              <p className={css.resultLabel}>Правильних відповідей</p>
+              <p className={css.resultLabel}>Правильних</p>
             </div>
             <div className={`${css.resultCard} ${css.incorrect}`}>
               <h2 className={`${css.resultNumber} ${css.incorrect}`}>
@@ -176,17 +156,14 @@ export default function ResultsEmail() {
             <div className={`${css.resultCard} ${css.time}`}>
               <div className={css.timeDisplay}>{averageTime}с</div>
               <p className={css.resultLabel}>Середній час</p>
-              <p className={css.resultSublabel}>на аналіз листа</p>
+              <p className={css.resultSublabel}>на один лист</p>
             </div>
           </div>
 
           <div className={css.feedbackSection}>
-            <h3 className={css.feedbackTitle}>
-              🤝 Допоможіть нам стати кращими
-            </h3>
+            <h3 className={css.feedbackTitle}>🤝 Маєш ідеї чи відгук?</h3>
             <p className={css.feedbackText}>
-              Ваша думка дуже важлива для нас! Поділіться враженнями про
-              тестування та запропонуйте ідеї для покращення.
+              Розкажи, що думаєш про тренування, і допоможи зробити його кращим.
             </p>
             <a
               href="https://forms.gle/your-feedback-form"
@@ -207,8 +184,8 @@ export default function ResultsEmail() {
 
         <div className={css.footerSection}>
           <p className={css.footerText}>
-            🛡️ Пам'ятайте: критичне мислення та медіаграмотність - ваш найкращий
-            захист в цифровому світі!
+            🛡️ Пам’ятай: уважність і критичне мислення — твій найкращий захист
+            онлайн
           </p>
         </div>
       </div>
