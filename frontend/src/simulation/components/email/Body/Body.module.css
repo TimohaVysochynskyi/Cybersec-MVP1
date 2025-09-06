@@ -42,8 +42,7 @@
 .image {
   width: 40px;
   height: 40px;
-  background-color: rgba(152, 53, 71, 1);
-  border-radius: 50%;
+  object-fit: contain;
   flex-shrink: 0;
 }
 .title {

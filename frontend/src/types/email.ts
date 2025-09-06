@@ -7,6 +7,7 @@ export interface Email {
     isPhishing: boolean;
     contentPath: string;
     category: 'inbox' | 'spam' | 'all';
+    logoPath: string;
 }
 
 export type EmailCategory = 'inbox' | 'spam' | 'all';

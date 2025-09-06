@@ -57,7 +57,7 @@ export default function Body({
       <div className={css.container}>
         <div className={css.top}>
           <div className={css.titleWrapper}>
-            <div className={css.image}></div>
+            <img src={email.logoPath} alt={email.from} className={css.image} />
             <span className={css.title}>
               {email.from}
               <span className={css.arrow}> &gt;</span>
@@ -78,7 +78,7 @@ export default function Body({
       <div className={css.container}>
         <div className={css.top}>
           <div className={css.titleWrapper}>
-            <div className={css.image}></div>
+            <img src={email.logoPath} alt={email.from} className={css.image} />
             <span className={css.title}>
               {email.from}
               <span className={css.arrow}> &gt;</span>
@@ -117,7 +117,7 @@ export default function Body({
     <div className={css.container}>
       <div className={css.top}>
         <div className={css.titleWrapper}>
-          <div className={css.image}></div>
+          <img src={email.logoPath} alt={email.from} className={css.image} />
           <span className={css.title}>
             {email.from}
             <span className={css.arrow}> &gt;</span>

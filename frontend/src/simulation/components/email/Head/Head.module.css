@@ -7,11 +7,17 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .subject {
   font-size: 18px;
   font-weight: 400;
   line-height: 100%;
   color: rgba(4, 2, 112, 1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  min-width: 0;
 }
 .date {
   font-size: 16px;

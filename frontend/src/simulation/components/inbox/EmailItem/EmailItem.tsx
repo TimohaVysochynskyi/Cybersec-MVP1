@@ -24,7 +24,7 @@ export default function EmailItem({
         className={`${css.item} ${isSelected ? css.selected : ""}`}
         onClick={handleClick}
       >
-        <div className={css.image}></div>
+        <img src={email.logoPath} alt={email.from} className={css.image} />
         <div className={css.content}>
           <div className={css.row}>
             <span className={css.subject}>{email.from}</span>

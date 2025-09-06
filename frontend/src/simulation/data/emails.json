@@ -7,7 +7,8 @@
     "date": "2025-08-17T09:15:00Z",
     "isPhishing": false,
     "contentPath": "/emails/1.html",
-    "category": "inbox"
+    "category": "inbox",
+    "logoPath": "/logos/phishmail.png"
   },
   {
     "id": "2",
@@ -17,7 +18,8 @@
     "date": "2025-08-17T09:20:00Z",
     "isPhishing": true,
     "contentPath": "/emails/2.html",
-    "category": "inbox"
+    "category": "inbox",
+    "logoPath": "/logos/google.png"
   },
   {
     "id": "3",
@@ -27,7 +29,8 @@
     "date": "2025-08-17T09:25:00Z",
     "isPhishing": false,
     "contentPath": "/emails/3.html",
-    "category": "inbox"
+    "category": "inbox",
+    "logoPath": "/logos/steam.png"
   },
   {
     "id": "4",
@@ -37,7 +40,8 @@
     "date": "2025-08-17T09:30:00Z",
     "isPhishing": true,
     "contentPath": "/emails/4.html",
-    "category": "inbox"
+    "category": "inbox",
+    "logoPath": "/logos/paypal.png"
   },
   {
     "id": "5",
@@ -47,7 +51,8 @@
     "date": "2025-08-17T09:40:00Z",
     "isPhishing": true,
     "contentPath": "/emails/5.html",
-    "category": "inbox"
+    "category": "inbox",
+    "logoPath": "/logos/epic-games.png"
   },
   {
     "id": "6",
@@ -57,7 +62,8 @@
     "date": "2025-08-17T09:50:00Z",
     "isPhishing": false,
     "contentPath": "/emails/6.html",
-    "category": "inbox"
+    "category": "inbox",
+    "logoPath": "/logos/discord.png"
   },
   {
     "id": "7",
@@ -67,7 +73,8 @@
     "date": "2025-08-17T10:00:00Z",
     "isPhishing": true,
     "contentPath": "/emails/7.html",
-    "category": "inbox"
+    "category": "inbox",
+    "logoPath": "/logos/netflix.png"
   },
   {
     "id": "8",
@@ -77,7 +84,8 @@
     "date": "2025-08-17T10:15:00Z",
     "isPhishing": false,
     "contentPath": "/emails/8.html",
-    "category": "inbox"
+    "category": "inbox",
+    "logoPath": "/logos/github.png"
   },
   {
     "id": "9",
@@ -87,7 +95,8 @@
     "date": "2025-08-17T10:30:00Z",
     "isPhishing": true,
     "contentPath": "/emails/9.html",
-    "category": "inbox"
+    "category": "inbox",
+    "logoPath": "/logos/facebook.png"
   },
   {
     "id": "10",
@@ -97,6 +106,7 @@
     "date": "2025-08-17T11:00:00Z",
     "isPhishing": false,
     "contentPath": "/emails/10.html",
-    "category": "inbox"
+    "category": "inbox",
+    "logoPath": "/logos/phishmail.png"
   }
 ]
