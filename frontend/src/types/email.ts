@@ -16,6 +16,7 @@ export interface EmailListProps {
     selectedEmailId: string | null;
     onEmailSelect: (email: Email) => void;
     currentCategory: EmailCategory;
+    readEmails?: Set<string>;
 }
 
 export interface EmailItemProps {
@@ -36,6 +37,7 @@ export interface BodyProps {
     email: Email | null;
     onClassifyEmail?: (emailId: string, isPhishingGuess: boolean) => void;
     userProgress?: UserProgress;
+    onStartTraining?: () => void;
 }
 
 export interface UserProgress {

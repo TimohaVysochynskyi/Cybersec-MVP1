@@ -13,6 +13,7 @@ export default function EmailsList({
   selectedEmailId,
   onEmailSelect,
   currentCategory,
+  readEmails,
 }: EmailListProps) {
   return (
     <>
@@ -22,7 +23,12 @@ export default function EmailsList({
         </div>
         <ul className={css.list}>
           {emails.map((email) => (
-            <li key={email.id} className={css.item}>
+            <li
+              key={email.id}
+              className={`${css.item} ${
+                readEmails?.has(email.id) ? css.read : ""
+              }`}
+            >
               <EmailItem
                 email={email}
                 isSelected={email.id === selectedEmailId}

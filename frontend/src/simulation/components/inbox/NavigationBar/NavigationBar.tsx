@@ -7,6 +7,11 @@ interface NavigationBarProps {
   userProgress: UserProgress;
   searchQuery: string;
   onSearchChange: (query: string) => void;
+  emailCounts: {
+    all: number;
+    inbox: number;
+    spam: number;
+  };
 }
 
 export default function NavigationBar({
@@ -15,6 +20,7 @@ export default function NavigationBar({
   userProgress,
   searchQuery,
   onSearchChange,
+  emailCounts,
 }: NavigationBarProps) {
   return (
     <>
@@ -37,6 +43,7 @@ export default function NavigationBar({
             />
           </svg>
           <span>Уся пошта</span>
+          <span className={css.count}>({emailCounts.all})</span>
         </button>
         <button
           className={`${css.button} ${
@@ -56,6 +63,7 @@ export default function NavigationBar({
             />
           </svg>
           <span>Вхідні</span>
+          <span className={css.count}>({emailCounts.inbox})</span>
         </button>
         <button
           className={`${css.button} ${
@@ -75,6 +83,7 @@ export default function NavigationBar({
             />
           </svg>
           <span>Небажана пошта</span>
+          <span className={css.count}>({emailCounts.spam})</span>
         </button>
 
         {/* Прогрес користувача */}

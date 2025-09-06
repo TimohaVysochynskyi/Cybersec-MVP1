@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { Toaster } from "react-hot-toast";
 import css from "./Simulation.module.css";
 import Layout from "./components/Layout/Layout";
 import Body from "./components/email/Body/Body";
@@ -8,28 +9,35 @@ import EmailsList from "./components/inbox/EmailsList/EmailsList";
 import NavigationBar from "./components/inbox/NavigationBar/NavigationBar";
 import emailsData from "./data/emails.json";
 import { useUserProgress } from "../hooks/useUserProgress";
+import { useEmailFlow } from "./hooks/useEmailFlow";
 import type { Email as EmailType, EmailCategory } from "../types/email";
 
 export default function SimulationPage() {
-  const [emails, setEmails] = useState<EmailType[]>([]);
+  const [allEmails] = useState<EmailType[]>(emailsData as EmailType[]);
   const [selectedEmail, setSelectedEmail] = useState<EmailType | null>(null);
   const [currentCategory, setCurrentCategory] =
     useState<EmailCategory>("inbox");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  const { userProgress, classifyEmail, isEmailClassifiable, startEmailView } =
-    useUserProgress(emails);
+  // Хук для керування потоком листів
+  const {
+    receivedEmails,
+    startTraining,
+    proceedToNextEmail,
+    updateEmailCategory,
+    readEmails,
+    markEmailAsRead,
+  } = useEmailFlow({
+    allEmails,
+  });
 
-  useEffect(() => {
-    setEmails(emailsData as EmailType[]);
-    // Автоматично вибираємо перший лист
-    if (emailsData.length > 0) {
-      setSelectedEmail(emailsData[0] as EmailType);
-    }
-  }, []);
+  const { userProgress, classifyEmail, isEmailClassifiable, startEmailView } =
+    useUserProgress(receivedEmails);
 
   const handleEmailSelect = (email: EmailType) => {
     setSelectedEmail(email);
+    // Позначаємо лист як прочитаний
+    markEmailAsRead(email.id);
     // Початок відстеження часу перегляду для класифікованих листів
     if (isEmailClassifiable(email.id)) {
       startEmailView(email.id);
@@ -40,16 +48,14 @@ export default function SimulationPage() {
     classifyEmail(emailId, isPhishingGuess);
 
     // Оновлюємо категорію email після класифікації
-    setEmails((prevEmails) =>
-      prevEmails.map((email) =>
-        email.id === emailId
-          ? {
-              ...email,
-              category: isPhishingGuess ? "spam" : ("inbox" as EmailCategory),
-            }
-          : email
-      )
-    );
+    updateEmailCategory(emailId, isPhishingGuess);
+
+    // Після класифікації додаємо наступний лист
+    proceedToNextEmail();
+  };
+
+  const handleStartTraining = () => {
+    startTraining();
   };
 
   const handleCategoryChange = (category: EmailCategory) => {
@@ -61,7 +67,7 @@ export default function SimulationPage() {
   };
 
   // Фільтрація email-ів по категоріях та пошуку
-  const filteredEmails = emails.filter((email) => {
+  const filteredEmails = receivedEmails.filter((email) => {
     // Фільтрація по категорії
     if (currentCategory !== "all" && email.category !== currentCategory) {
       return false;
@@ -80,8 +86,16 @@ export default function SimulationPage() {
     return true;
   });
 
+  // Підрахунок листів по категоріях
+  const emailCounts = {
+    all: receivedEmails.length,
+    inbox: receivedEmails.filter((email) => email.category === "inbox").length,
+    spam: receivedEmails.filter((email) => email.category === "spam").length,
+  };
+
   return (
     <>
+      <Toaster />
       <Layout>
         <div className={css.container}>
           <NavigationBar
@@ -90,6 +104,7 @@ export default function SimulationPage() {
             userProgress={userProgress}
             searchQuery={searchQuery}
             onSearchChange={handleSearchChange}
+            emailCounts={emailCounts}
           />
           <div className={css.content}>
             <EmailsList
@@ -97,6 +112,7 @@ export default function SimulationPage() {
               selectedEmailId={selectedEmail?.id || null}
               onEmailSelect={handleEmailSelect}
               currentCategory={currentCategory}
+              readEmails={readEmails}
             />
             <Email selectedEmail={selectedEmail}>
               <Head email={selectedEmail} />
@@ -104,6 +120,7 @@ export default function SimulationPage() {
                 email={selectedEmail}
                 onClassifyEmail={handleClassifyEmail}
                 userProgress={userProgress}
+                onStartTraining={handleStartTraining}
               />
             </Email>
           </div>

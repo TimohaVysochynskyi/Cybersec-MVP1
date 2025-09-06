@@ -15,6 +15,7 @@
   background-color: transparent;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
   color: #3440e7;
   font-size: 17px;
@@ -24,6 +25,11 @@
 .button span {
   position: relative;
   top: 2px;
+}
+.count {
+  margin-left: auto;
+  font-weight: 500;
+  opacity: 0.8;
 }
 .active {
   background-color: #7abbf1;

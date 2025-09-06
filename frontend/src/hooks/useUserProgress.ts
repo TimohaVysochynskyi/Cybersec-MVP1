@@ -8,17 +8,15 @@ export const useUserProgress = (emails: Email[]) => {
     const [userProgress, setUserProgress] = useState<UserProgress>({
         points: 0,
         classifiedEmails: [],
-        totalClassifiableEmails: 0,
+        totalClassifiableEmails: 8, // Завжди 8 листів для класифікації (id 2-9)
         completionPercentage: 0,
         averageResponseTime: 0,
     });
 
     const [emailViewStartTime, setEmailViewStartTime] = useState<number | null>(null);
 
-    // Фільтруємо листи які можна класифікувати (виключаємо перший та останній)
-    const classifiableEmails = emails.filter(email =>
-        email.id !== "1" && email.id !== "10"
-    );
+    // Загальна кількість листів які можна класифікувати (виключаємо перший та останній)
+    const totalClassifiableCount = 8; // id 2-9
 
     useEffect(() => {
         // Завантажуємо прогрес з localStorage
@@ -28,8 +26,8 @@ export const useUserProgress = (emails: Email[]) => {
                 const parsedProgress = JSON.parse(savedProgress) as UserProgress;
                 setUserProgress({
                     ...parsedProgress,
-                    totalClassifiableEmails: classifiableEmails.length,
-                    completionPercentage: calculateCompletionPercentage(parsedProgress.classifiedEmails, classifiableEmails.length),
+                    totalClassifiableEmails: totalClassifiableCount,
+                    completionPercentage: calculateCompletionPercentage(parsedProgress.classifiedEmails, totalClassifiableCount),
                 });
             } catch (error) {
                 console.error('Error parsing saved progress:', error);
@@ -43,14 +41,27 @@ export const useUserProgress = (emails: Email[]) => {
             const initialProgress: UserProgress = {
                 points: 0,
                 classifiedEmails: [],
-                totalClassifiableEmails: classifiableEmails.length,
+                totalClassifiableEmails: totalClassifiableCount,
                 completionPercentage: 0,
                 averageResponseTime: 0,
             };
             setUserProgress(initialProgress);
             localStorage.setItem(STORAGE_KEY, JSON.stringify(initialProgress));
         }
-    }, [classifiableEmails.length]);
+
+        // Очищуємо localStorage при закритті/перезавантаженні сторінки
+        const clearProgressOnUnload = () => {
+            localStorage.removeItem(STORAGE_KEY);
+        };
+
+        window.addEventListener('beforeunload', clearProgressOnUnload);
+        window.addEventListener('unload', clearProgressOnUnload);
+
+        return () => {
+            window.removeEventListener('beforeunload', clearProgressOnUnload);
+            window.removeEventListener('unload', clearProgressOnUnload);
+        };
+    }, []); // Видаляю залежність
 
     const calculateCompletionPercentage = (classified: ClassifiedEmail[], total: number): number => {
         if (total === 0) return 0;
@@ -84,7 +95,7 @@ export const useUserProgress = (emails: Email[]) => {
                 ...userProgress,
                 classifiedEmails: updatedClassifications,
                 points: calculatePoints(updatedClassifications),
-                completionPercentage: calculateCompletionPercentage(updatedClassifications, classifiableEmails.length),
+                completionPercentage: calculateCompletionPercentage(updatedClassifications, totalClassifiableCount),
                 averageResponseTime: calculateAverageResponseTime(updatedClassifications),
             };
 
@@ -108,7 +119,7 @@ export const useUserProgress = (emails: Email[]) => {
                 ...userProgress,
                 classifiedEmails: updatedClassifications,
                 points: calculatePoints(updatedClassifications),
-                completionPercentage: calculateCompletionPercentage(updatedClassifications, classifiableEmails.length),
+                completionPercentage: calculateCompletionPercentage(updatedClassifications, totalClassifiableCount),
                 averageResponseTime: calculateAverageResponseTime(updatedClassifications),
             };
 
@@ -147,7 +158,7 @@ export const useUserProgress = (emails: Email[]) => {
         const initialProgress: UserProgress = {
             points: 0,
             classifiedEmails: [],
-            totalClassifiableEmails: classifiableEmails.length,
+            totalClassifiableEmails: totalClassifiableCount,
             completionPercentage: 0,
             averageResponseTime: 0,
         };

@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import css from "./Body.module.css";
 import type { BodyProps } from "../../../../types/email";
 import ResultsEmail from "../../ResultsEmail/ResultsEmail";
+import FirstEmail from "../../FirstEmail/FirstEmail";
 
 export default function Body({
   email,
   onClassifyEmail,
   userProgress,
+  onStartTraining,
 }: BodyProps) {
   const [emailContent, setEmailContent] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
@@ -47,6 +49,27 @@ export default function Body({
 
   if (!email) {
     return null;
+  }
+
+  // Special rendering for first email (welcome email)
+  if (email.id === "1") {
+    return (
+      <div className={css.container}>
+        <div className={css.top}>
+          <div className={css.titleWrapper}>
+            <div className={css.image}></div>
+            <span className={css.title}>
+              {email.from}
+              <span className={css.arrow}> &gt;</span>
+              <span className={css.fromEmail}> {email.fromEmail}</span>
+            </span>
+          </div>
+        </div>
+        <div className={css.content}>
+          <FirstEmail onStartTraining={onStartTraining || (() => {})} />
+        </div>
+      </div>
+    );
   }
 
   // Special rendering for results email

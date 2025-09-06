@@ -10,6 +10,10 @@
   transition: background-color 0.2s ease;
 }
 
+.item.unread {
+  padding-left: 48px;
+}
+
 .item:hover {
   background-color: #bcc8f0;
 }
