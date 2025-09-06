@@ -1,20 +1,6 @@
 import { useState, useEffect } from "react";
 import css from "./ResultsEmail.module.css";
-
-interface UserProgress {
-  points: number;
-  classifiedEmails: Array<{
-    emailId: string;
-    isPhishingGuess: boolean;
-    isCorrect: boolean;
-    timestamp: number;
-    responseTime: number;
-    emailViewedAt: number;
-  }>;
-  totalClassifiableEmails: number;
-  completionPercentage: number;
-  averageResponseTime: number;
-}
+import type { UserProgress } from "../../../types/email";
 
 interface AchievementLevel {
   level: number;
@@ -22,7 +8,11 @@ interface AchievementLevel {
   description: string;
 }
 
-export default function ResultsEmail() {
+interface ResultsEmailProps {
+  userProgress: UserProgress;
+}
+
+export default function ResultsEmail({ userProgress }: ResultsEmailProps) {
   const [correctAnswers, setCorrectAnswers] = useState<number>(0);
   const [incorrectAnswers, setIncorrectAnswers] = useState<number>(0);
   const [averageTime, setAverageTime] = useState<number>(0);
@@ -74,44 +64,23 @@ export default function ResultsEmail() {
       return achievementLevels[3]; // 0-2 з 8
     };
 
-    const loadResults = () => {
-      try {
-        const storedProgress = localStorage.getItem("cybersec-user-progress");
-        if (storedProgress) {
-          const progress: UserProgress = JSON.parse(storedProgress);
+    // Використовуємо переданий userProgress замість localStorage
+    const correct = userProgress.classifiedEmails
+      ? userProgress.classifiedEmails.filter((e) => e.isCorrect === true).length
+      : 0;
+    const total = userProgress.totalClassifiableEmails || 8;
+    const incorrect = total - correct;
+    const avgTimeSeconds = userProgress.averageResponseTime
+      ? Math.round(userProgress.averageResponseTime / 1000)
+      : 0;
 
-          const correct = progress.classifiedEmails
-            ? progress.classifiedEmails.filter((e) => e.isCorrect === true)
-                .length
-            : 0;
-          const total = progress.totalClassifiableEmails || 8;
-          const incorrect = total - correct;
-          const avgTimeSeconds = progress.averageResponseTime
-            ? Math.round(progress.averageResponseTime / 1000)
-            : 0;
+    setCorrectAnswers(correct);
+    setIncorrectAnswers(incorrect);
+    setAverageTime(avgTimeSeconds);
 
-          setCorrectAnswers(correct);
-          setIncorrectAnswers(incorrect);
-          setAverageTime(avgTimeSeconds);
-
-          const achievement = getAchievementByScore(correct, total);
-          setCurrentAchievement(achievement);
-        } else {
-          setCorrectAnswers(0);
-          setIncorrectAnswers(0);
-          setAverageTime(0);
-          setCurrentAchievement(achievementLevels[3]);
-        }
-      } catch {
-        setCorrectAnswers(0);
-        setIncorrectAnswers(0);
-        setAverageTime(0);
-        setCurrentAchievement(achievementLevels[3]);
-      }
-    };
-
-    loadResults();
-  }, []);
+    const achievement = getAchievementByScore(correct, total);
+    setCurrentAchievement(achievement);
+  }, [userProgress]);
 
   return (
     <div className={css.emailBody}>

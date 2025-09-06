@@ -12,7 +12,7 @@
   {
     "id": "2",
     "from": "Google Support",
-    "fromEmail": "security-team@googl3-support.com",
+    "fromEmail": "security-team@google.security.com",
     "subject": "Ваш акаунт буде заблоковано!",
     "date": "2025-08-17T09:20:00Z",
     "isPhishing": true,
@@ -32,7 +32,7 @@
   {
     "id": "4",
     "from": "PayPal Security",
-    "fromEmail": "paypal-alert@secure-paypa1.com",
+    "fromEmail": "security@paipal.com",
     "subject": "Підозріла активність на вашому рахунку",
     "date": "2025-08-17T09:30:00Z",
     "isPhishing": true,
@@ -42,8 +42,8 @@
   {
     "id": "5",
     "from": "Epic Games",
-    "fromEmail": "login@epicgam3s.net",
-    "subject": "Хтось увійшов у ваш акаунт",
+    "fromEmail": "official@epicgames.support.com",
+    "subject": "Завантажте наш новий лаунчер!",
     "date": "2025-08-17T09:40:00Z",
     "isPhishing": true,
     "contentPath": "/emails/5.html",
@@ -62,7 +62,7 @@
   {
     "id": "7",
     "from": "Netflix",
-    "fromEmail": "billing@netfliix-update.com",
+    "fromEmail": "billing@netflix.account.com",
     "subject": "Проблема з вашим платежем",
     "date": "2025-08-17T10:00:00Z",
     "isPhishing": true,
@@ -82,7 +82,7 @@
   {
     "id": "9",
     "from": "Facebook",
-    "fromEmail": "alert@facebo0k-security.net",
+    "fromEmail": "security-alert@facebook.security.com",
     "subject": "Ваш акаунт буде видалено!",
     "date": "2025-08-17T10:30:00Z",
     "isPhishing": true,
@@ -91,7 +91,7 @@
   },
   {
     "id": "10",
-    "from": "CyberSec Platform",
+    "from": "Phishmail Platform",
     "fromEmail": "no-reply@cybersec-demo.com",
     "subject": "✅ Симуляцію завершено!",
     "date": "2025-08-17T11:00:00Z",

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import css from "./FirstEmail.module.css";
 
 interface FirstEmailProps {
@@ -5,6 +6,15 @@ interface FirstEmailProps {
 }
 
 export default function FirstEmail({ onStartTraining }: FirstEmailProps) {
+  const [isStarted, setIsStarted] = useState(false);
+
+  const handleStartClick = () => {
+    if (!isStarted) {
+      setIsStarted(true);
+      onStartTraining();
+    }
+  };
+
   return (
     <div className={css.emailBody}>
       <div className={css.emailContainer}>
@@ -129,7 +139,13 @@ export default function FirstEmail({ onStartTraining }: FirstEmailProps) {
           </div>
 
           <div className={css.actionSection}>
-            <button className={css.startButton} onClick={onStartTraining}>
+            <button
+              className={`${css.startButton} ${
+                isStarted ? css.startButtonDisabled : ""
+              }`}
+              onClick={handleStartClick}
+              disabled={isStarted}
+            >
               <svg
                 width="16"
                 height="16"
@@ -138,7 +154,7 @@ export default function FirstEmail({ onStartTraining }: FirstEmailProps) {
               >
                 <path d="M8,5.14V19.14L19,12.14L8,5.14Z" />
               </svg>
-              Почати тренування
+              {isStarted ? "Тренування розпочато" : "Почати тренування"}
             </button>
           </div>
         </div>

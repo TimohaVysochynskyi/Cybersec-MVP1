@@ -162,6 +162,19 @@
   box-shadow: 0 6px 16px rgba(52, 64, 231, 0.4);
 }
 
+.startButtonDisabled {
+  background: #a0aec0 !important;
+  color: #718096 !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.startButtonDisabled:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
 .footerSection {
   background: #f7fafc;
   padding: 24px 32px;

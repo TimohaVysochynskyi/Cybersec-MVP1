@@ -47,6 +47,7 @@
   background-color: rgba(62, 121, 238, 0.1);
   border-radius: 8px;
   border: 1px solid rgba(62, 121, 238, 0.3);
+  outline: none;
 }
 
 .progressInfo {
@@ -110,7 +111,7 @@
     height: 20px;
   }
   .progressWrapper {
-    padding: 12px 10px;
+    padding: 9px 10px;
     gap: 3px;
     border-radius: 7px;
   }
@@ -148,7 +149,7 @@
     height: 18px;
   }
   .progressWrapper {
-    padding: 10px 9px;
+    padding: 8px 9px;
     gap: 3px;
     border-radius: 6px;
   }
@@ -186,7 +187,7 @@
     height: 16px;
   }
   .progressWrapper {
-    padding: 8px 8px;
+    padding: 7px 8px;
     gap: 2px;
     border-radius: 5px;
   }

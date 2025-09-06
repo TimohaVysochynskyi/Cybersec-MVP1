@@ -58,14 +58,14 @@
 }
 .date {
   font-size: 18px;
-  flex-shrink: 0; /* Не дозволяє даті скорочуватися */
+  flex-shrink: 0;
   white-space: nowrap;
   color: rgba(52, 64, 231, 1);
 }
 .text {
   font-size: 16px;
   line-height: 115%;
-  color: #999999;
+  color: #555;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;

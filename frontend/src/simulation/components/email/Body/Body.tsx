@@ -87,7 +87,7 @@ export default function Body({
           </div>
         </div>
         <div className={css.content}>
-          <ResultsEmail />
+          {userProgress && <ResultsEmail userProgress={userProgress} />}
         </div>
       </div>
     );

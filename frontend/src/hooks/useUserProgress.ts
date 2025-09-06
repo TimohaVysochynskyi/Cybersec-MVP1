@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { UserProgress, ClassifiedEmail, Email } from '../types/email';
 
-const STORAGE_KEY = 'cybersec-user-progress';
 const POINTS_PER_CORRECT = 1;
 
 export const useUserProgress = (emails: Email[]) => {
@@ -19,49 +18,16 @@ export const useUserProgress = (emails: Email[]) => {
     const totalClassifiableCount = 8; // id 2-9
 
     useEffect(() => {
-        // Завантажуємо прогрес з localStorage
-        const savedProgress = localStorage.getItem(STORAGE_KEY);
-        if (savedProgress) {
-            try {
-                const parsedProgress = JSON.parse(savedProgress) as UserProgress;
-                setUserProgress({
-                    ...parsedProgress,
-                    totalClassifiableEmails: totalClassifiableCount,
-                    completionPercentage: calculateCompletionPercentage(parsedProgress.classifiedEmails, totalClassifiableCount),
-                });
-            } catch (error) {
-                console.error('Error parsing saved progress:', error);
-                initializeProgress();
-            }
-        } else {
-            initializeProgress();
-        }
-
-        function initializeProgress() {
-            const initialProgress: UserProgress = {
-                points: 0,
-                classifiedEmails: [],
-                totalClassifiableEmails: totalClassifiableCount,
-                completionPercentage: 0,
-                averageResponseTime: 0,
-            };
-            setUserProgress(initialProgress);
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(initialProgress));
-        }
-
-        // Очищуємо localStorage при закритті/перезавантаженні сторінки
-        const clearProgressOnUnload = () => {
-            localStorage.removeItem(STORAGE_KEY);
+        // Ініціалізуємо прогрес без localStorage
+        const initialProgress: UserProgress = {
+            points: 0,
+            classifiedEmails: [],
+            totalClassifiableEmails: totalClassifiableCount,
+            completionPercentage: 0,
+            averageResponseTime: 0,
         };
-
-        window.addEventListener('beforeunload', clearProgressOnUnload);
-        window.addEventListener('unload', clearProgressOnUnload);
-
-        return () => {
-            window.removeEventListener('beforeunload', clearProgressOnUnload);
-            window.removeEventListener('unload', clearProgressOnUnload);
-        };
-    }, []); // Видаляю залежність
+        setUserProgress(initialProgress);
+    }, []);
 
     const calculateCompletionPercentage = (classified: ClassifiedEmail[], total: number): number => {
         if (total === 0) return 0;
@@ -100,7 +66,6 @@ export const useUserProgress = (emails: Email[]) => {
             };
 
             setUserProgress(newProgress);
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(newProgress));
         } else {
             // Додаємо нову класифікацію
             const isCorrect = isPhishingGuess === email.isPhishing;
@@ -124,7 +89,6 @@ export const useUserProgress = (emails: Email[]) => {
             };
 
             setUserProgress(newProgress);
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(newProgress));
         }
     };
 
@@ -163,7 +127,6 @@ export const useUserProgress = (emails: Email[]) => {
             averageResponseTime: 0,
         };
         setUserProgress(initialProgress);
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(initialProgress));
     };
 
     return {

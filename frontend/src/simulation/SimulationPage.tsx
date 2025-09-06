@@ -19,7 +19,14 @@ export default function SimulationPage() {
     useState<EmailCategory>("inbox");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  // Хук для керування потоком листів
+  const handleEmailSelect = (email: EmailType) => {
+    setSelectedEmail(email);
+    markEmailAsRead(email.id);
+    if (isEmailClassifiable(email.id)) {
+      startEmailView(email.id);
+    }
+  };
+
   const {
     receivedEmails,
     startTraining,
@@ -29,20 +36,11 @@ export default function SimulationPage() {
     markEmailAsRead,
   } = useEmailFlow({
     allEmails,
+    onEmailSelect: handleEmailSelect,
   });
 
   const { userProgress, classifyEmail, isEmailClassifiable, startEmailView } =
     useUserProgress(receivedEmails);
-
-  const handleEmailSelect = (email: EmailType) => {
-    setSelectedEmail(email);
-    // Позначаємо лист як прочитаний
-    markEmailAsRead(email.id);
-    // Початок відстеження часу перегляду для класифікованих листів
-    if (isEmailClassifiable(email.id)) {
-      startEmailView(email.id);
-    }
-  };
 
   const handleClassifyEmail = (emailId: string, isPhishingGuess: boolean) => {
     classifyEmail(emailId, isPhishingGuess);
