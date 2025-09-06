@@ -1,8 +1,8 @@
 [
   {
     "id": "1",
-    "from": "CyberSec Platform",
-    "fromEmail": "no-reply@cybersec-demo.com",
+    "from": "Phishmail Platform",
+    "fromEmail": "no-reply@phishmail.com",
     "subject": "Вітаємо у тренажері з фішингових листів!",
     "date": "2025-08-17T09:15:00Z",
     "isPhishing": false,
